@@ -4,40 +4,17 @@
 	<title>Games Dislalia</title>
 	<meta charset="utf-8">
 	<link rel="stylesheet" type="text/css" href="css/materialize.min.css"> 
-	<script src="lib/angular.min.js"></script>
-	<script src="js/app.js"></script>
-	<script src="js/service/fonoService.js" ></script>
-	<script src="js/controller/loginController.js"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.5/angular.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.0-beta.2/angular-animate.js"></script>
+    <script src="https://code.angularjs.org/1.5.4/angular-route.js"></script>
+	<script type="text/javascript" src="lib/materialize.min.js"></script>
+	<script type="text/javascript" src="lib/jquery.min.js"></script>
+	<script type="text/javascript" src="js/app.js"></script>
+	<script type="text/javascript" src="js/routes.js"></script>
+	<script type="text/javascript" src="js/service/fonoService.js" ></script>
+	<script type="text/javascript" src="js/controller/loginController.js"></script>
 </head>
-<body background="img/fundo.png" ng-app='app'>
-	<div style="margin-left: 30%; margin-top: 10%" ng-controller = 'loginCtrl'>
-		<div class="row">
-			<div class="col s6">
-				<div class="card" align="center">
-					<div class="card-content">
-						<div class="row">
-							<form class="col s12">
-								<div class="row">
-									<div class="input-field col s12">
-										<input id="login" type="text" class="validate" name = "login" ng-model = "login.login">
-										<label for="login">Login</label>
-									</div>
-								</div>
-								<div class="row">
-									<div class="input-field col s12">
-										<input id="senha" type="password" class="validate" name="senha" ng-model = "login.senha">
-										<label for="senha">Senha</label>
-									</div>
-								</div>
-							</form>
-							<div align="right">
-								<a class="btn waves-effect waves-light" ng-click = "loginFono(login)">Entrar</a>
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
-	</div>
+<body background="img/fundo.png" ng-app="app">
+	<div ng-view></div>
 </body>
 </html>

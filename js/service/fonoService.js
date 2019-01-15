@@ -12,7 +12,7 @@ app.service("appService", ["$http", function($http){
             url:'http://game-tcc.herokuapp.com/fono/login',
             data: valorData,
             headers: {
-                'Content-Type' : 'application/x-www-form-urlencoded'
+                'Content-Type' : 'application/json'
             }
         }
     

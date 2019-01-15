@@ -1,0 +1,29 @@
+<div style="margin-left: 30%; margin-top: 10%" ng-controller = 'loginCtrl'>
+	<div class="row">
+		<div class="col s6">
+			<div class="card" align="center">
+				<div class="card-content">
+					<div class="row">
+						<form class="col s12">
+							<div class="row">
+								<div class="input-field col s12">
+									<input id="login" type="text" class="validate" name = "login" ng-model = "login.login">
+									<label for="login">Login</label>
+								</div>
+							</div>
+							<div class="row">
+								<div class="input-field col s12">
+									<input id="senha" type="password" class="validate" name="senha" ng-model = "login.senha">
+									<label for="senha">Senha</label>
+								</div>
+							</div>
+						</form>
+						<div align="right">
+							<a class="btn waves-effect waves-light" ng-click = "loginFono(login)">Entrar</a>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>

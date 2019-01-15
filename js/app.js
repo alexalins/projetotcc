@@ -1,1 +1,1 @@
-app = angular.module('app', ['starter.controllers', 'starter.services'])
+app = angular.module('app', ['starter.controllers', 'starter.services', 'ngRoute']);
