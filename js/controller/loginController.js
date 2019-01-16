@@ -1,5 +1,3 @@
-angular.module('starter.controllers', [])
-
 app.controller('loginCtrl', function($scope,  appService) {
     $scope.login = {};
     $scope.loginFono = function(login){

@@ -1,5 +1,3 @@
-var app = angular.module('starter.services', [])
-
 app.service("appService", ["$http", function($http){
 
     this.loginFono = function(login){
