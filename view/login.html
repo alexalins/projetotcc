@@ -4,22 +4,31 @@
 			<div class="card" align="center">
 				<div class="card-content">
 					<div class="row">
+						<div align="right">
+							<a class="btn waves-effect waves-light" href="#/cadastroFono"><i class="material-icons right">person_add</i></a>
+						</div>
 						<form class="col s12">
 							<div class="row">
 								<div class="input-field col s12">
-									<input id="login" type="text" class="validate" name = "login" ng-model = "login.login">
+									<input id="login" type="text" class="validate" name="login" ng-model="login.login">
 									<label for="login">Login</label>
 								</div>
 							</div>
 							<div class="row">
 								<div class="input-field col s12">
-									<input id="senha" type="password" class="validate" name="senha" ng-model = "login.senha">
+									<input id="senha" type="password" class="validate" name="senha" ng-model="login.senha">
 									<label for="senha">Senha</label>
 								</div>
 							</div>
+							<select class="browser-default">
+								<option value="" disabled selected>Tipo de usuario:</option>
+								<option value="1">Fonoaudiólogo </option>
+								<option value="2">Paciente</option>
+							</select>
+							<br />
 						</form>
-						<div align="right">
-							<a class="btn waves-effect waves-light" ng-click = "loginFono(login)">Entrar</a>
+						<div align="center">
+							<a class="btn waves-effect waves-light" ng-click="loginFono(login)">Entrar</a>
 						</div>
 					</div>
 				</div>

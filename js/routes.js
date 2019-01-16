@@ -7,5 +7,10 @@ app.config(function($routeProvider) {
         controller: 'loginCtrl'
     })
 
+    .when('/cadastroFono', {
+        templateUrl: 'view/fono/cadastroFono.html',
+        controller: 'fonoCtrl'
+    })
+
     .otherwise('/login');
 });
