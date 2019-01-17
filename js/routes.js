@@ -9,7 +9,7 @@ app.config(function($routeProvider) {
 
     .when('/cadastroFono', {
         templateUrl: 'view/fono/cadastroFono.html',
-        controller: 'fonoCtrl'
+        controller: 'cadastroCtrl'
     })
 
     .when('/inicioFono', {
@@ -29,7 +29,22 @@ app.config(function($routeProvider) {
 
     .when('/cadastroPacientes', {
         templateUrl: 'view/paciente/cadastroPaciente.html',
-        controller: 'fonoCtrl'
+        controller: 'cadastroCtrl'
+    })
+
+    .when('/inicioPaciente', {
+        templateUrl: 'view/paciente/inicioPaciente.html',
+        controller: "jogoCtrl"
+    })
+
+    .when('/dadosPaciente', {
+        templateUrl: 'view/paciente/dadosPaciente.html',
+        controller: 'pacienteCtrl'
+    })
+
+    .when('/partidasPaciente', {
+        templateUrl: 'view/paciente/partidasPaciente.html',
+        controller: 'pacienteCtrl'
     })
 
     .otherwise('/login');

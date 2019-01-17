@@ -8,7 +8,9 @@ app.controller('loginCtrl', function($scope, $location, loginService) {
                 localStorage.setItem("dados", dados);
                 $location.path('/inicioFono');
             }else if(login.usuario == "paciente"){
-
+                var dados = angular.toJson(success.data);
+                localStorage.setItem("dados", dados);
+                $location.path('/inicioPaciente');
             }
         })
         .catch(function(error) {

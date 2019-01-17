@@ -1,9 +1,9 @@
-app.service("fonoService", ["$http", function($http){
+app.service("jogoService", ["$http", function($http){
 
-    this.getFono = function(id){
+    this.getJogos = function(){
         var req = {
             method: 'GET',
-            url:'http://game-tcc.herokuapp.com/fono/' + id,
+            url:'http://game-tcc.herokuapp.com/jogo',
             headers: {
                 'Content-Type' : 'application/json'
             }
