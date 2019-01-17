@@ -12,5 +12,25 @@ app.config(function($routeProvider) {
         controller: 'fonoCtrl'
     })
 
+    .when('/inicioFono', {
+        templateUrl: 'view/fono/inicioFono.html',
+        controller: 'fonoCtrl'
+    })
+
+    .when('/dadosFono', {
+        templateUrl: 'view/fono/dadosFono.html',
+        controller: 'fonoCtrl'
+    })
+
+    .when('/pacientesFono', {
+        templateUrl: 'view/fono/pacientesFono.html',
+        controller: 'fonoCtrl'
+    })
+
+    .when('/cadastroPacientes', {
+        templateUrl: 'view/paciente/cadastroPaciente.html',
+        controller: 'fonoCtrl'
+    })
+
     .otherwise('/login');
 });

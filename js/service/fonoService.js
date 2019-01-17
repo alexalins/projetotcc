@@ -1,21 +1,4 @@
-app.service("appService", ["$http", function($http){
-
-    this.loginFono = function(login){
-        var valorData = {
-            "login" : login.login,
-            "senha" : login.senha
-        }
-        var req = {
-            method: 'POST',
-            url:'http://game-tcc.herokuapp.com/fono/login',
-            data: valorData,
-            headers: {
-                'Content-Type' : 'application/json'
-            }
-        }
-    
-        return $http(req);
-    }
+app.service("fonoService", ["$http", function($http){
 
     this.cadastroFono = function(fono){
         var valorData = {
@@ -39,8 +22,51 @@ app.service("appService", ["$http", function($http){
                 'Content-Type' : 'application/json'
             }
         }
-    
+
         return $http(req);
     }
 
+    this.getFono = function(id){
+        var req = {
+            method: 'GET',
+            url:'http://game-tcc.herokuapp.com/fono/' + id,
+            headers: {
+                'Content-Type' : 'application/json'
+            }
+        }
+
+        return $http(req);
+    }
+
+    this.cadastroPaciente = function(paciente, id){
+        var valorData = {
+            "nome" : paciente.nome,
+            "nomeResponsavel" : paciente.nomeResponsavel,
+            "telefone" : paciente.telefone,
+            "idade": paciente.idade,
+            "login": paciente.login,
+            "senha": paciente.senha,
+            "endereco":{
+                "rua": paciente.endereco.rua,
+                "bairro": paciente.endereco.bairro,
+                "cidade": paciente.endereco.cidade
+            },
+            "fono" : {
+                "id" : id
+            }
+        }
+
+        console.log(valorData);
+
+        var req = {
+            method: 'POST',
+            url:'http://game-tcc.herokuapp.com/paciente',
+            data: valorData,
+            headers: {
+                'Content-Type' : 'application/json'
+            }
+        }
+
+        return $http(req);
+    }
 }])

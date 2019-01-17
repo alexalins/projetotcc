@@ -1,12 +1,18 @@
-app.controller('loginCtrl', function($scope,  appService) {
+app.controller('loginCtrl', function($scope, $location, loginService) {
     $scope.login = {};
-    $scope.loginFono = function(login){
-        appService.loginFono(login)
+    $scope.login = function(login){
+        loginService.loginFono(login)
         .then(function(success) {
-            console.log("entrou");
+            if(login.usuario == "fono"){
+                var dados = angular.toJson(success.data);
+                localStorage.setItem("dados", dados);
+                $location.path('/inicioFono');
+            }else if(login.usuario == "paciente"){
+
+            }
         })
         .catch(function(error) {
-            console.log("Não foi possível realizar o login.", error);
+            alert("Não foi possível realizar o login.");
         })
     }
 })
