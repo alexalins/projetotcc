@@ -12,6 +12,11 @@ app.config(function($routeProvider) {
         controller: 'cadastroCtrl'
     })
 
+    .when('/atualizarFono', {
+        templateUrl: 'view/fono/atualizarFono.html',
+        controller: 'fonoCtrl'
+    })
+
     .when('/inicioFono', {
         templateUrl: 'view/fono/inicioFono.html',
         controller: 'fonoCtrl'
@@ -44,6 +49,11 @@ app.config(function($routeProvider) {
 
     .when('/partidasPaciente', {
         templateUrl: 'view/paciente/partidasPaciente.html',
+        controller: 'pacienteCtrl'
+    })
+
+    .when('/atualizarPaciente', {
+        templateUrl: 'view/paciente/atualizarPaciente.html',
         controller: 'pacienteCtrl'
     })
 

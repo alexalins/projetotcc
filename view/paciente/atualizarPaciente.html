@@ -1,0 +1,74 @@
+<div style="margin-left: 25%;">
+    <div class="row">
+        <div class="col s8">
+            <div class="card" align="center">
+                <div class="card-content">
+                    <div class="row">
+                        <form class="col s12">
+                            <div class="row">
+                                <div class="input-field col s12">
+                                    <input id="nome" type="text" class="validate" name="nome" ng-model="paciente.nome">
+                                    <label for="nome">Nome</label>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="input-field col s12">
+                                    <input id="nomeResponsavel" type="text" class="validate"
+                                        ng-model="paciente.nomeResponsavel">
+                                    <label for="nomeResponsavel">Nome do responsavel</label>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="input-field col s12">
+                                    <input id="idade" type="number" class="validate"
+                                        ng-model="paciente.idade">
+                                    <label for="idade">Idade</label>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="input-field col s12">
+                                    <input id="login" type="text" class="validate" ng-model="paciente.login">
+                                    <label for="login">Login</label>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="input-field col s12">
+                                    <input id="senha" type="password" class="validate" ng-model="paciente.senha">
+                                    <label for="senha">Senha</label>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="input-field col s12">
+                                    <input id="rua" type="text" class="validate" ng-model="paciente.endereco.rua">
+                                    <label for="rua">Rua</label>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="input-field col s12">
+                                    <input id="bairro" type="text" class="validate" ng-model="paciente.endereco.bairro">
+                                    <label for="bairro">Bairro</label>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="input-field col s12">
+                                    <input id="cidade" type="text" class="validate" ng-model="paciente.endereco.cidade">
+                                    <label for="cidade">Cidade</label>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="input-field col s12">
+                                    <input id="telefone" type="text" class="validate" ng-model="paciente.telefone">
+                                    <label for="telefone">Telefone</label>
+                                </div>
+                            </div>
+                            <br />
+                        </form>
+                        <div align="center">
+                            <a class="btn waves-effect waves-light" ng-click="atualizarPaciente(paciente)">Salvar</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
