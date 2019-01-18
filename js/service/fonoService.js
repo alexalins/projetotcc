@@ -12,9 +12,22 @@ app.service("fonoService", ["$http", function($http){
     }
     //
     this.atualizarFono = function(fono, id){
+        var valorData = {
+            "id" : id,
+            "nome" : fono.nome,
+            "codigo" : fono.codigo,
+            "telefone" : fono.telefone,
+            "login": fono.login,
+            "senha": fono.senha,
+            "endereco":{
+                "rua": fono.endereco.rua,
+                "bairro": fono.endereco.bairro,
+                "cidade": fono.endereco.cidade
+            }
+        }
         var req = {
             method: 'PUT',
-            url:'http://game-tcc.herokuapp.com/fono/' + id,
+            url:'http://game-tcc.herokuapp.com/fono/',
             data: fono,
             headers: {
                 'Content-Type' : 'application/json'
