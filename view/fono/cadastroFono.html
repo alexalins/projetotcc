@@ -4,59 +4,63 @@
             <div class="card" align="center">
                 <div class="card-content">
                     <div class="row">
-                        <form class="col s12">
+                        <form class="col s12" name="fonoForm">
                             <div class="row">
                                 <div class="input-field col s12">
-                                    <input id="nome" type="text" class="validate" name="nome" ng-model="fono.nome">
+                                    <input id="nome" type="text" class="validate" name="nome" ng-model="fono.nome" ng-required="true">
                                     <label for="nome">Nome</label>
                                 </div>
                             </div>
                             <div class="row">
                                 <div class="input-field col s12">
-                                    <input id="codigo" type="text" class="validate" name="codigo" ng-model="fono.codigo">
+                                    <input id="codigo" type="text" class="validate" name="codigo" ng-model="fono.codigo" ng-required="true">
                                     <label for="codigo">Codigo</label>
                                 </div>
                             </div>
                             <div class="row">
                                 <div class="input-field col s12">
-                                    <input id="login" type="text" class="validate" name="login" ng-model="fono.login">
+                                    <input id="login" type="text" class="validate" name="login" ng-model="fono.login" ng-required="true">
                                     <label for="login">Login</label>
                                 </div>
                             </div>
                             <div class="row">
                                 <div class="input-field col s12">
-                                    <input id="senha" type="password" class="validate" name="senha" ng-model="fono.senha">
+                                    <input id="senha" type="password" class="validate" name="senha" ng-model="fono.senha" ng-required="true">
                                     <label for="senha">Senha</label>
                                 </div>
                             </div>
                             <div class="row">
                                 <div class="input-field col s12">
-                                    <input id="rua" type="text" class="validate" name="rua" ng-model="fono.endereco.rua">
+                                    <input id="rua" type="text" class="validate" name="rua" ng-model="fono.endereco.rua" ng-required="true">
                                     <label for="rua">Rua</label>
                                 </div>
                             </div>
                             <div class="row">
                                 <div class="input-field col s12">
-                                    <input id="bairro" type="text" class="validate" name="bairro" ng-model="fono.endereco.bairro">
+                                    <input id="bairro" type="text" class="validate" name="bairro" ng-model="fono.endereco.bairro" ng-required="true">
                                     <label for="bairro">Bairro</label>
                                 </div>
                             </div>
                             <div class="row">
                                 <div class="input-field col s12">
-                                    <input id="cidade" type="text" class="validate" name="cidade" ng-model="fono.endereco.cidade">
+                                    <input id="cidade" type="text" class="validate" name="cidade" ng-model="fono.endereco.cidade" ng-required="true">
                                     <label for="cidade">Cidade</label>
                                 </div>
                             </div>
                             <div class="row">
                                 <div class="input-field col s12">
-                                    <input id="telefone" type="text" class="validate" name="telefone" ng-model="fono.telefone">
+                                    <input id="telefone" type="text" class="validate" name="telefone" ng-model="fono.telefone" onkeyup="mascara( this, mtel );" maxlength="15" ng-required="true">
                                     <label for="telefone">Telefone</label>
                                 </div>
                             </div>
                             <br />
                         </form>
+                        <div ng-show="fonoForm.$invalid" class="alert alert-danger">
+                            <h5 style="color: red">Por favor, preencha todos os campos!</h5>
+                        </div>
+                        <br/>
                         <div align="center">
-                            <a class="btn waves-effect waves-light" ng-click="cadastroFono(fono)">Salvar</a>
+                            <a class="btn waves-effect waves-light" ng-disabled="fonoForm.$invalid" ng-click="cadastroFono(fono)">Salvar</a>
                         </div>
                     </div>
                 </div>

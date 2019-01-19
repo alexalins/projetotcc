@@ -15,67 +15,71 @@
             <div class="card" align="center">
                 <div class="card-content">
                     <div class="row">
-                        <form class="col s12">
+                        <form class="col s12" name="pacienteForm">
                             <div class="row">
                                 <div class="input-field col s12">
-                                    <input id="nome" type="text" class="validate" name="nome" ng-model="paciente.nome">
+                                    <input id="nome" type="text" class="validate" name="nome" ng-model="paciente.nome" ng-required="true">
                                     <label for="nome">Nome</label>
                                 </div>
                             </div>
                             <div class="row">
                                 <div class="input-field col s12">
                                     <input id="nomeResponsavel" type="text" class="validate"
-                                        ng-model="paciente.nomeResponsavel">
+                                        ng-model="paciente.nomeResponsavel" ng-required="true">
                                     <label for="nomeResponsavel">Nome do responsavel</label>
                                 </div>
                             </div>
                             <div class="row">
                                 <div class="input-field col s12">
                                     <input id="idade" type="number" class="validate"
-                                        ng-model="paciente.idade">
+                                        ng-model="paciente.idade" ng-required="true">
                                     <label for="idade">Idade</label>
                                 </div>
                             </div>
                             <div class="row">
                                 <div class="input-field col s12">
-                                    <input id="login" type="text" class="validate" ng-model="paciente.login">
+                                    <input id="login" type="text" class="validate" ng-model="paciente.login" ng-required="true">
                                     <label for="login">Login</label>
                                 </div>
                             </div>
                             <div class="row">
                                 <div class="input-field col s12">
-                                    <input id="senha" type="password" class="validate" ng-model="paciente.senha">
+                                    <input id="senha" type="password" class="validate" ng-model="paciente.senha" ng-required="true">
                                     <label for="senha">Senha</label>
                                 </div>
                             </div>
                             <div class="row">
                                 <div class="input-field col s12">
-                                    <input id="rua" type="text" class="validate" ng-model="paciente.endereco.rua">
+                                    <input id="rua" type="text" class="validate" ng-model="paciente.endereco.rua" ng-required="true">
                                     <label for="rua">Rua</label>
                                 </div>
                             </div>
                             <div class="row">
                                 <div class="input-field col s12">
-                                    <input id="bairro" type="text" class="validate" ng-model="paciente.endereco.bairro">
+                                    <input id="bairro" type="text" class="validate" ng-model="paciente.endereco.bairro" ng-required="true">
                                     <label for="bairro">Bairro</label>
                                 </div>
                             </div>
                             <div class="row">
                                 <div class="input-field col s12">
-                                    <input id="cidade" type="text" class="validate" ng-model="paciente.endereco.cidade">
+                                    <input id="cidade" type="text" class="validate" ng-model="paciente.endereco.cidade" ng-required="true">
                                     <label for="cidade">Cidade</label>
                                 </div>
                             </div>
                             <div class="row">
                                 <div class="input-field col s12">
-                                    <input id="telefone" type="text" class="validate" ng-model="paciente.telefone">
+                                    <input id="telefone" type="text" class="validate" ng-model="paciente.telefone"onkeyup="mascara( this, mtel );" maxlength="15" ng-required="true">
                                     <label for="telefone">Telefone</label>
                                 </div>
                             </div>
                             <br />
                         </form>
+                        <div ng-show="pacienteForm.$invalid" class="alert alert-danger">
+                            <h5 style="color: red">Por favor, preencha todos os campos!</h5>
+                        </div>
+                        <br/>
                         <div align="center">
-                            <a class="btn waves-effect waves-light" ng-click="cadastroPaciente(paciente)">Salvar</a>
+                            <a class="btn waves-effect waves-light" ng-disabled="pacienteForm.$invalid" ng-click="cadastroPaciente(paciente)">Salvar</a>
                         </div>
                     </div>
                 </div>
