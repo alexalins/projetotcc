@@ -43,5 +43,6 @@ app.controller('fonoCtrl', function ($scope, $location, fonoService) {
                 })
         }
     }
+ 
 
 })

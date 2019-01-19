@@ -2,7 +2,6 @@ app.controller('pacienteCtrl', function ($scope, $location, pacienteService) {
     //
     dados = localStorage.getItem("dados");
     $scope.paciente = angular.fromJson(dados);
-    console.log($scope.paciente);
     //
     pacienteService.getPaciente($scope.paciente.id)
         .then(function (success) {
@@ -17,7 +16,6 @@ app.controller('pacienteCtrl', function ($scope, $location, pacienteService) {
     pacienteService.getFono($scope.paciente.id)
         .then(function (success) {
             $scope.fono = success.data;
-            console.log($scope.fono)
         })
         .catch(function (error) {
             alert("Não foi possível listar os dados");

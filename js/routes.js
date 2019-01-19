@@ -57,5 +57,20 @@ app.config(function($routeProvider) {
         controller: 'pacienteCtrl'
     })
 
+    .when('/relatorioPartida/:id', {
+        templateUrl: 'view/paciente/relatorioPartida.html',
+        controller: 'partidaCtrl'
+    })
+
+    .when('/relatorioFono/:id', {
+        templateUrl: 'view/fono/relatorioPartida.html',
+        controller: 'partidaCtrl'
+    })
+
+    .when('/pacientePartida/:id', {
+        templateUrl: 'view/fono/partidasPaciente.html',
+        controller: 'partidasFonoCtrl'
+    })
+
     .otherwise('/login');
 });

@@ -12,4 +12,16 @@ app.service("jogoService", ["$http", function($http){
         return $http(req);
     }
 
+    this.getJogo = function(){
+        var req = {
+            method: 'GET',
+            url:'http://game-tcc.herokuapp.com/jogo/' + id,
+            headers: {
+                'Content-Type' : 'application/json'
+            }
+        }
+
+        return $http(req);
+    }
+
 }])

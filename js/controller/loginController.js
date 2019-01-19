@@ -1,4 +1,5 @@
 app.controller('loginCtrl', function($scope, $location, loginService) {
+    localStorage.clear();
     $scope.login = {};
     $scope.login = function(login){
         loginService.loginFono(login)

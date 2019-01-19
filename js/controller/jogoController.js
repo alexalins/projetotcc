@@ -8,5 +8,4 @@ app.controller('jogoCtrl', function($scope, jogoService) {
     .catch(function(error){
         alert("Não foi possível listar os dados");
     })
-    //
 })

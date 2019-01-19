@@ -9,18 +9,14 @@
 		</ul>
 	</div>
 </nav>
-<div class="col s12 m7" ng-repeat = "jogo in jogo">
-	<div class="card horizontal">
-		<div class="card-image">
-			<img ng-src="{{jogo.foto}}">
-		</div>
-		<div class="card-stacked">
-			<div class="card-content">
-				<span><b>{{jogo.nome}}</b></span>
-				<p>{{jogo.descricao}}</p>
-			</div>
-			<div class="card-action">
-				<a href="#/jogo/{{jogo.id}}">Jogar!</a>
+<div style="margin-left: 15%;">
+	<div class="row">
+		<div class="col s10">
+			<div class="card-stacked">
+				<div class="card-content">
+					<span><b>{{jogo.nome}}</b></span>
+					<p>{{jogo.descricao}}</p>
+				</div>
 			</div>
 		</div>
 	</div>

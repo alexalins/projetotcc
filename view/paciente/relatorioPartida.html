@@ -15,26 +15,47 @@
 			<table class="centered">
 				<thead>
 					<tr>
-						<th>Jogo</th>
+						<th>Nomo do jogo</th>
 						<th>Nivel</th>
-						<th>Tempo de jogo</th>
-						<th>Qnt. acertos</th>
-						<th>Qnt. erros</th>
-						<th>Ação</th>
+						<th>tempo</th>
 					</tr>
 				</thead>
-
-				<tbody ng-repeat = "partida in paciente.partidas">
+				<tbody>
 					<tr>
 						<td>{{partida.jogo.nome}}</td>
 						<td>{{partida.nivel}}</td>
 						<td>{{partida.tempo}}</td>
-						<td>{{partida.relatorio.acertos.length}}</td>
-						<td>{{partida.relatorio.erros.length}}</td>
-						<td><a class="waves-effect waves-light btn" href="#/relatorioPartida/{{partida.id}}">Ver relatorio</a></td>
 					</tr>
 				</tbody>
 			</table>
+			<table class="centered">
+				<thead>
+					<tr>
+						<th>Acerto</th>
+					</tr>
+				</thead>
+
+				<tbody ng-repeat = "acertos in partida.relatorio.acertos">
+					<tr>
+						<td>{{acertos.palavra}}</td>
+					</tr>
+				</tbody>
+			</table>
+			<table class="centered">
+				<thead>
+					<tr>
+						<th>Erro</th>
+					</tr>
+				</thead>
+
+				<tbody ng-repeat = "erros in partida.relatorio.erros">
+					<tr>
+						<td>{{erros.palavra}}</td>
+					</tr>
+				</tbody>
+			</table>
+			<br/><br/>
+			<canvas id="myChart" width="300" height="150"></canvas>
 		</div>
 	</div>
 </div>

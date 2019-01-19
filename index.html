@@ -10,22 +10,27 @@
 	<script src="https://code.angularjs.org/1.5.4/angular-route.js"></script>
 	<script type="text/javascript" src="lib/materialize.min.js"></script>
 	<script type="text/javascript" src="lib/jquery.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.3/Chart.min.js"></script>
 	<script type="text/javascript" src="js/directive.js"></script>
 	<script type="text/javascript" src="js/app.js"></script>
 	<script type="text/javascript" src="js/routes.js"></script>
+	<!--SERVICES-->
 	<script type="text/javascript" src="js/service/fonoService.js" ></script>
 	<script type="text/javascript" src="js/service/pacienteService.js" ></script>
 	<script type="text/javascript" src="js/service/loginService.js" ></script>
 	<script type="text/javascript" src="js/service/cadastroService.js" ></script>
 	<script type="text/javascript" src="js/service/jogoService.js" ></script>
+	<script type="text/javascript" src="js/service/partidaService.js" ></script>
+	<!-- CONTROLLERS -->
 	<script type="text/javascript" src="js/controller/loginController.js"></script>
 	<script type="text/javascript" src="js/controller/fonoController.js"></script>
 	<script type="text/javascript" src="js/controller/pacienteController.js"></script>
 	<script type="text/javascript" src="js/controller/cadastroController.js"></script>
 	<script type="text/javascript" src="js/controller/jogoController.js"></script>
+	<script type="text/javascript" src="js/controller/partidaController.js"></script>
+	<script type="text/javascript" src="js/controller/partidasFonoController.js"></script>
 </head>
 <body background="img/fundo.png" ng-app="app">
-	<div menu-fono></div>
 	<div ng-view></div>
 </body>
 </html>
