@@ -1,11 +1,12 @@
 <!DOCTYPE html >
 <html lang="pt-br">
+
 <head>
 	<title>Games Dislalia</title>
 	<meta charset="utf-8">
-	<link rel="stylesheet" type="text/css" href="css/materialize.min.css"> 
+	<link rel="stylesheet" type="text/css" href="css/materialize.min.css">
 	<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.5/angular.min.js"></script>		
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.5/angular.min.js"></script>
 	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.0-beta.2/angular-animate.js"></script>
 	<script src="https://code.angularjs.org/1.5.4/angular-route.js"></script>
 	<script type="text/javascript" src="lib/materialize.min.js"></script>
@@ -15,13 +16,13 @@
 	<script type="text/javascript" src="js/app.js"></script>
 	<script type="text/javascript" src="js/routes.js"></script>
 	<!--SERVICES-->
-	<script type="text/javascript" src="js/service/fonoService.js" ></script>
-	<script type="text/javascript" src="js/service/pacienteService.js" ></script>
-	<script type="text/javascript" src="js/service/loginService.js" ></script>
-	<script type="text/javascript" src="js/service/cadastroService.js" ></script>
-	<script type="text/javascript" src="js/service/jogoService.js" ></script>
-	<script type="text/javascript" src="js/service/partidaService.js" ></script>
-	<script type="text/javascript" src="js/service/palavraService.js" ></script>
+	<script type="text/javascript" src="js/service/fonoService.js"></script>
+	<script type="text/javascript" src="js/service/pacienteService.js"></script>
+	<script type="text/javascript" src="js/service/loginService.js"></script>
+	<script type="text/javascript" src="js/service/cadastroService.js"></script>
+	<script type="text/javascript" src="js/service/jogoService.js"></script>
+	<script type="text/javascript" src="js/service/partidaService.js"></script>
+	<script type="text/javascript" src="js/service/palavraService.js"></script>
 	<!-- CONTROLLERS -->
 	<script type="text/javascript" src="js/controller/loginController.js"></script>
 	<script type="text/javascript" src="js/controller/fonoController.js"></script>
@@ -32,24 +33,49 @@
 	<script type="text/javascript" src="js/controller/partidasFonoController.js"></script>
 	<script type="text/javascript" src="js/controller/palavraController.js"></script>
 </head>
+
 <body background="img/fundo.png" ng-app="app">
 	<div ng-view></div>
 	<script type="text/javascript">
-	/* Máscaras ER */
-function mascara(o,f){
-    v_obj=o
-    v_fun=f
-    setTimeout("execmascara()",1)
-}
-function execmascara(){
-    v_obj.value=v_fun(v_obj.value)
-}
-function mtel(v){
-    v=v.replace(/\D/g,"");             //Remove tudo o que não é dígito
-    v=v.replace(/^(\d{2})(\d)/g,"($1) $2"); //Coloca parênteses em volta dos dois primeiros dígitos
-    v=v.replace(/(\d)(\d{4})$/,"$1-$2");    //Coloca hífen entre o quarto e o quinto dígitos
-    return v;
-}
+		/* Máscaras ER */
+		function mascara(o, f) {
+			v_obj = o
+			v_fun = f
+			setTimeout("execmascara()", 1)
+		}
+		function execmascara() {
+			v_obj.value = v_fun(v_obj.value)
+		}
+		function mtel(v) {
+			v = v.replace(/\D/g, "");             //Remove tudo o que não é dígito
+			v = v.replace(/^(\d{2})(\d)/g, "($1) $2"); //Coloca parênteses em volta dos dois primeiros dígitos
+			v = v.replace(/(\d)(\d{4})$/, "$1-$2");    //Coloca hífen entre o quarto e o quinto dígitos
+			return v;
+		}
 	</script>
+	<style>
+		#opcao2,
+		#opcao3,
+		#opcao4,
+		#opcao5,
+		#opcao6,
+		#opcao7,
+		#opcao8,
+		#opcao9,
+		#opcao10,
+		#opcao11,
+		#opcao12,
+		#opcao13,
+		#opcao14,
+		#opcao15,
+		#opcao16,
+		#opcao17,
+		#opcao18,
+		#opcao19,
+		#opcao20 {
+			display: none;
+		}
+	</style>
 </body>
+
 </html>

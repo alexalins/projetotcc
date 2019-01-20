@@ -2,7 +2,8 @@ app.controller('partidaCtrl', function($scope, $routeParams, partidaService) {
     //
     partidaService.getPartida($routeParams.id)
     .then(function(success){
-    	$scope.partida = success.data;
+		$scope.partida = success.data;
+		console.log($scope.partida);
     	relatorio($scope.partida.relatorio)
     })
     .catch(function(error){

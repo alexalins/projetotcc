@@ -2,7 +2,6 @@
 	<div class="nav-wrapper">
 		<a href="#/inicioFono" class="brand-logo">Game</a>
 		<ul id="nav-mobile" class="right hide-on-med-and-down">
-			<li><a href="#/cadastroPacientes">Cadatrar Pacientes</a></li>
 			<li><a href="#/pacientesFono">Meus Pacientes</a></li>
 			<li><a href="#/dadosFono">Meus Dados</a></li>
 			<li><a href="#/login">Sair</a></li>
@@ -11,6 +10,11 @@
 </nav>
 <div class="row">
 	<div class="col s12 m12">
+		<br />
+		<div align="right">
+			<a class="waves-effect waves-light btn-small" href="#/cadastroPacientes"><i class="material-icons right">edit</i>Adicionar
+				pacientes</a>
+		</div>
 		<div class="card white darken-1">
 			<p align="center" ng-if="fono.pacientes.length == 0">SEM PACIENTES CADASTRADOS</p>
 			<table class="centered" ng-if="fono.pacientes.length > 0">

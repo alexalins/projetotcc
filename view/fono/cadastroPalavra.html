@@ -1,39 +1,164 @@
 <nav style="background-color: #03a9f4">
-        <div class="nav-wrapper">
-          <a href="#/inicioFono" class="brand-logo">Game</a>
-          <ul id="nav-mobile" class="right hide-on-med-and-down">
-            <li><a href="#/cadastroPacientes">Cadatrar Pacientes</a></li>
+    <div class="nav-wrapper">
+        <a href="#/inicioFono" class="brand-logo">Game</a>
+        <ul id="nav-mobile" class="right hide-on-med-and-down">
             <li><a href="#/pacientesFono">Meus Pacientes</a></li>
             <li><a href="#/dadosFono">Meus Dados</a></li>
             <li><a href="#/login">Sair</a></li>
-          </ul>
-        </div>
-    </nav>
-    <div style="margin-left: 25%;">
-        <div class="row">
-            <div class="col s8">
-                <div class="card" align="center">
-                    <div class="card-content">
-                        <div class="row">
-                            <form class="col s12" name="pacienteForm">
-                                <div class="row">
-                                    <div class="input-field col s12">
-                                        <input id="palavra" type="text" class="validate" name="palavra" ng-model="palavra.palavra" ng-required="true">
-                                        <label for="palavra">Palavra</label>
-                                    </div>
+        </ul>
+    </div>
+</nav>
+<div style="margin-left: 25%;">
+    <div class="row">
+        <div class="col s8">
+            <div class="card" align="center">
+                <div class="card-content">
+                    <div class="row">
+                        <form class="col s12" name="pacienteForm">
+                            <div class="row" id="opcao1">
+                                <div class="input-field col s12">
+                                    <input id="palavra" type="text" class="validate" name="palavra" ng-model="palavra.palavra[0]"
+                                        ng-required="true">
+                                    <label for="palavra">Palavra</label>
                                 </div>
-                                <br />
-                            </form>
-                            <div ng-show="pacienteForm.$invalid" class="alert alert-danger">
-                                <h6 style="color: red">Por favor, escreva uma palavra!</h6>
                             </div>
-                            <br/>
-                            <div align="center">
-                                <a class="btn waves-effect waves-light" ng-disabled="pacienteForm.$invalid" ng-click="cadastroPaciente(paciente)">Salvar</a>
+                            <div class="row" id="opcao2">
+                                <div class="input-field col s12">
+                                    <input id="palavra" type="text" class="validate" name="palavra" ng-model="palavra.palavra[1]">
+                                    <label for="palavra">Palavra</label>
+                                </div>
                             </div>
+                            <div class="row" id="opcao3">
+                                <div class="input-field col s12">
+                                    <input id="palavra" type="text" class="validate" name="palavra" ng-model="palavra.palavra[2]">
+                                    <label for="palavra">Palavra</label>
+                                </div>
+                            </div>
+                            <div class="row" id="opcao4">
+                                <div class="input-field col s12">
+                                    <input id="palavra" type="text" class="validate" name="palavra" ng-model="palavra.palavra[3]">
+                                    <label for="palavra">Palavra</label>
+                                </div>
+                            </div>
+                            <div class="row" id="opcao5">
+                                <div class="input-field col s12">
+                                    <input id="palavra" type="text" class="validate" name="palavra" ng-model="palavra.palavra[4]">
+                                    <label for="palavra">Palavra</label>
+                                </div>
+                            </div>
+                            <div class="row" id="opcao6">
+                                <div class="input-field col s12">
+                                    <input id="palavra" type="text" class="validate" name="palavra" ng-model="palavra.palavra[5]">
+                                    <label for="palavra">Palavra</label>
+                                </div>
+                            </div>
+                            <div class="row" id="opcao7">
+                                <div class="input-field col s12">
+                                    <input id="palavra" type="text" class="validate" name="palavra" ng-model="palavra.palavra[6]">
+                                    <label for="palavra">Palavra</label>
+                                </div>
+                            </div>
+                            <div class="row" id="opcao8">
+                                <div class="input-field col s12">
+                                    <input id="palavra" type="text" class="validate" name="palavra" ng-model="palavra.palavra[7]">
+                                    <label for="palavra">Palavra</label>
+                                </div>
+                            </div>
+                            <div class="row" id="opcao9">
+                                <div class="input-field col s12">
+                                    <input id="palavra" type="text" class="validate" name="palavra" ng-model="palavra.palavra[8]">
+                                    <label for="palavra">Palavra</label>
+                                </div>
+                            </div>
+                            <div class="row" id="opcao10">
+                                <div class="input-field col s12">
+                                    <input id="palavra" type="text" class="validate" name="palavra" ng-model="palavra.palavra[9]">
+                                    <label for="palavra">Palavra</label>
+                                </div>
+                            </div>
+                            <div class="row" id="opcao11">
+                                <div class="input-field col s12">
+                                    <input id="palavra" type="text" class="validate" name="palavra" ng-model="palavra.palavra[10]">
+                                    <label for="palavra">Palavra</label>
+                                </div>
+                            </div>
+                            <div class="row" id="opcao12">
+                                <div class="input-field col s12">
+                                    <input id="palavra" type="text" class="validate" name="palavra" ng-model="palavra.palavra[11]">
+                                    <label for="palavra">Palavra</label>
+                                </div>
+                            </div>
+                            <div class="row" id="opcao13">
+                                <div class="input-field col s12">
+                                    <input id="palavra" type="text" class="validate" name="palavra" ng-model="palavra.palavra[12]">
+                                    <label for="palavra">Palavra</label>
+                                </div>
+                            </div>
+                            <div class="row" id="opcao14">
+                                <div class="input-field col s12">
+                                    <input id="palavra" type="text" class="validate" name="palavra" ng-model="palavra.palavra[13]">
+                                    <label for="palavra">Palavra</label>
+                                </div>
+                            </div>
+                            <div class="row" id="opcao15">
+                                <div class="input-field col s12">
+                                    <input id="palavra" type="text" class="validate" name="palavra" ng-model="palavra.palavra[14]">
+                                    <label for="palavra">Palavra</label>
+                                </div>
+                            </div>
+                            <div class="row" id="opcao16">
+                                <div class="input-field col s12">
+                                    <input id="palavra" type="text" class="validate" name="palavra" ng-model="palavra.palavra[15]">
+                                    <label for="palavra">Palavra</label>
+                                </div>
+                            </div>
+                            <div class="row" id="opcao17">
+                                <div class="input-field col s12">
+                                    <input id="palavra" type="text" class="validate" name="palavra" ng-model="palavra.palavra[16]">
+                                    <label for="palavra">Palavra</label>
+                                </div>
+                            </div>
+                            <div class="row" id="opcao18">
+                                <div class="input-field col s12">
+                                    <input id="palavra" type="text" class="validate" name="palavra" ng-model="palavra.palavra[17]">
+                                    <label for="palavra">Palavra</label>
+                                </div>
+                            </div>
+                            <div class="row" id="opcao19">
+                                <div class="input-field col s12">
+                                    <input id="palavra" type="text" class="validate" name="palavra" ng-model="palavra.palavra[18]">
+                                    <label for="palavra">Palavra</label>
+                                </div>
+                            </div>
+                            <div class="row" id="opcao20">
+                                <div class="input-field col s12">
+                                    <input id="palavra" type="text" class="validate" name="palavra" ng-model="palavra.palavra[19]">
+                                    <label for="palavra">Palavra</label>
+                                </div>
+                            </div>
+                            <br />
+                            <select class="browser-default" ng-model="palavra.nivel" ng-required="true">
+                                <option value="" disabled selected>Nivel:</option>
+                                <option value="facil">Fácil</option>
+                                <option value="medio">Médio</option>
+                                <option value="dificil">Dificíl</option>
+                            </select>
+                            <br />
+                        </form>
+                        <div ng-show="pacienteForm.$invalid" class="alert alert-danger">
+                            <h6 style="color: red">Por favor, escreva uma palavra!</h6>
+                        </div>
+                        <br />
+                        <div align="right">
+                            <a class="btn-floating btn-large waves-effect waves-light light-blue darken-3" title="Adicionar outra opção para votação"
+                                ng-click="exibirOpcao()"><i class="material-icons" style="background-color: green">add</i></a>
+                        </div>
+                        <div align="center">
+                            <a class="btn waves-effect waves-light" ng-disabled="pacienteForm.$invalid" ng-click="adicionarPalavras(palavra)">Salvar</a>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
     </div>
+</div>

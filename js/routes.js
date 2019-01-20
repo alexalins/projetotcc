@@ -77,8 +77,9 @@ app.config(function($routeProvider) {
         controller: 'palavraCtrl'
     })
 
-    .when('/cadastroPalavra', {
-        templateUrl: 'view/fono/cadastroPalavra.html'
+    .when('/cadastroPalavra/:id', {
+        templateUrl: 'view/fono/cadastroPalavra.html',
+        controller: 'palavraCtrl'
     })
 
     .otherwise('/login');

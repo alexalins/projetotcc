@@ -12,22 +12,12 @@ app.service("palavraService", ["$http", function($http){
         return $http(req);
     }
 
-    this.adicionarPalavra = function(palavra, idPaciente, idFono){
-        var valorData = {
-            "nivel" : palavra.nivel,
-            "palavra" : palavra.palavra,
-            "fono":{
-                "id": idFono
-            },
-            "paciente":{
-                "id": idPaciente
-            }
-        }
+    this.adicionarPalavra = function(palavra){
 
         var req = {
             method: 'POST',
             url:'http://game-tcc.herokuapp.com/palavra/',
-            data: valorData,
+            data: palavra,
             headers: {
                 'Content-Type' : 'application/json'
             }
