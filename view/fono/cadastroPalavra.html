@@ -1,0 +1,39 @@
+<nav style="background-color: #03a9f4">
+        <div class="nav-wrapper">
+          <a href="#/inicioFono" class="brand-logo">Game</a>
+          <ul id="nav-mobile" class="right hide-on-med-and-down">
+            <li><a href="#/cadastroPacientes">Cadatrar Pacientes</a></li>
+            <li><a href="#/pacientesFono">Meus Pacientes</a></li>
+            <li><a href="#/dadosFono">Meus Dados</a></li>
+            <li><a href="#/login">Sair</a></li>
+          </ul>
+        </div>
+    </nav>
+    <div style="margin-left: 25%;">
+        <div class="row">
+            <div class="col s8">
+                <div class="card" align="center">
+                    <div class="card-content">
+                        <div class="row">
+                            <form class="col s12" name="pacienteForm">
+                                <div class="row">
+                                    <div class="input-field col s12">
+                                        <input id="palavra" type="text" class="validate" name="palavra" ng-model="palavra.palavra" ng-required="true">
+                                        <label for="palavra">Palavra</label>
+                                    </div>
+                                </div>
+                                <br />
+                            </form>
+                            <div ng-show="pacienteForm.$invalid" class="alert alert-danger">
+                                <h6 style="color: red">Por favor, escreva uma palavra!</h6>
+                            </div>
+                            <br/>
+                            <div align="center">
+                                <a class="btn waves-effect waves-light" ng-disabled="pacienteForm.$invalid" ng-click="cadastroPaciente(paciente)">Salvar</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>

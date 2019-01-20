@@ -72,5 +72,14 @@ app.config(function($routeProvider) {
         controller: 'partidasFonoCtrl'
     })
 
+    .when('/palavraPartida/:id', {
+        templateUrl: 'view/fono/palavrasFono.html',
+        controller: 'palavraCtrl'
+    })
+
+    .when('/cadastroPalavra', {
+        templateUrl: 'view/fono/cadastroPalavra.html'
+    })
+
     .otherwise('/login');
 });
