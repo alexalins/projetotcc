@@ -15,17 +15,23 @@
 			<a class="waves-effect waves-light btn-small" href="#/cadastroPalavra/{{idPaciente}}"><i class="material-icons right">edit</i>Adicionar
 				palavras</a>
 		</div>
+		<br />
 		<div class="card white darken-1">
 			<p align="center" ng-if="palavras.length == 0">SEM PALAVRAS CADASTRADAS</p>
+			<div ng-show="palavras.length > 0">
+				<input type="text" placeholder="Buscar por palavra ou nivel" ng-model="criterioDeBusca">
+			</div>
 			<table class="centered" ng-if="palavras.length > 0">
 				<thead>
 					<tr>
-						<th>Palavras</th>
+						<th>Palavra</th>
+						<th>Nivel</th>
 					</tr>
 				</thead>
-				<tbody ng-repeat="palavra in palavras">
+				<tbody ng-repeat="palavra in palavras | filter: criterioDeBusca">
 					<tr>
 						<td>{{palavra.palavra}}</td>
+						<td>{{palavra.nivel}}</td>
 					</tr>
 				</tbody>
 			</table>

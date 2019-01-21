@@ -16,6 +16,9 @@
 				pacientes</a>
 		</div>
 		<div class="card white darken-1">
+			<div ng-show="fono.pacientes.length > 0">
+				<input type="text" placeholder="Buscar paciente" ng-model="criterioDeBusca">
+			</div>
 			<p align="center" ng-if="fono.pacientes.length == 0">SEM PACIENTES CADASTRADOS</p>
 			<table class="centered" ng-if="fono.pacientes.length > 0">
 				<thead>
@@ -32,7 +35,7 @@
 					</tr>
 				</thead>
 
-				<tbody ng-repeat="paciente in fono.pacientes">
+				<tbody ng-repeat="paciente in fono.pacientes | filter: criterioDeBusca">
 					<tr>
 						<td>{{paciente.nome}}</td>
 						<td>{{paciente.nomeResponsavel}}</td>

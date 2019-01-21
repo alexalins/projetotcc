@@ -28,33 +28,37 @@
 					</tr>
 				</tbody>
 			</table>
-			<table class="centered">
-				<thead>
-					<tr>
-						<th>Acerto</th>
-					</tr>
-				</thead>
+			<div class="col s6">
+				<table class="centered">
+					<thead>
+						<tr>
+							<th>Acerto</th>
+						</tr>
+					</thead>
 
-				<tbody ng-repeat = "acertos in partida.relatorio.acertos">
-					<tr>
-						<td>{{acertos.palavra}}</td>
-					</tr>
-				</tbody>
-			</table>
-			<table class="centered">
-				<thead>
-					<tr>
-						<th>Erro</th>
-					</tr>
-				</thead>
+					<tbody ng-repeat="acertos in partida.relatorio.acertos">
+						<tr>
+							<td>{{acertos.palavra}}</td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+			<div class="col s6">
+				<table class="centered">
+					<thead>
+						<tr>
+							<th>Erro</th>
+						</tr>
+					</thead>
 
-				<tbody ng-repeat = "erros in partida.relatorio.erros">
-					<tr>
-						<td>{{erros.palavra}}</td>
-					</tr>
-				</tbody>
-			</table>
-			<br/><br/>
+					<tbody ng-repeat="erros in partida.relatorio.erros">
+						<tr>
+							<td>{{erros.palavra}}</td>
+						</tr>
+					</tbody>
+				</table>
+				<br /><br /><br />
+			</div>
 			<canvas id="myChart" width="300" height="150"></canvas>
 		</div>
 	</div>

@@ -13,6 +13,9 @@
 	<div class="col s12 m12">
 		<div class="card white darken-1">
 			<p align="center" ng-if="paciente.partidas.length == 0">SEM PARTIDAS CADASTRADAS</p>
+			<div ng-show="paciente.partidas.length > 0">
+				<input type="text" placeholder="Buscar por jogo ou nivel" ng-model="criterioDeBusca">
+			</div>
 			<table class="centered" ng-if="paciente.partidas.length > 0">
 				<thead>
 					<tr>
@@ -25,7 +28,7 @@
 					</tr>
 				</thead>
 
-				<tbody ng-repeat="partida in paciente.partidas">
+				<tbody ng-repeat="partida in paciente.partidas | filter: criterioDeBusca">
 					<tr>
 						<td>{{partida.jogo.nome}}</td>
 						<td>{{partida.nivel}}</td>

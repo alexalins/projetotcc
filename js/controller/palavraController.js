@@ -1,4 +1,4 @@
-app.controller('palavraCtrl', function ($scope, $routeParams, palavraService) {
+app.controller('palavraCtrl', function ($scope, $routeParams, $location, palavraService) {
     localStorage.setItem("idPaciente", $routeParams.id);
     $scope.idPaciente = localStorage.getItem("idPaciente");
     $scope.fono = angular.fromJson(localStorage.getItem("dados"));
@@ -28,10 +28,9 @@ app.controller('palavraCtrl', function ($scope, $routeParams, palavraService) {
             console.log(palavra);
             palavraService.adicionarPalavra(palavra)
                 .then(function (success) {
-                    alert("Palavra(s) adicionada(s) com sucesso!");
+                    $location.path('/palavraPartida/' + $scope.idPaciente);
                 })
                 .catch(function (error) {
-                    alert("Não foi possível realizar o cadastro!");
                 })
         }
     }
