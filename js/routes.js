@@ -82,5 +82,10 @@ app.config(function($routeProvider) {
         controller: 'palavraCtrl'
     })
 
+    .when('/jogo1/:id', {
+        templateUrl: 'view/jogo/jogo1.html',
+        controller: 'jogoCtrl'
+    })
+
     .otherwise('/login');
 });

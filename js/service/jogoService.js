@@ -12,7 +12,7 @@ app.service("jogoService", ["$http", function($http){
         return $http(req);
     }
 
-    this.getJogo = function(){
+    this.getJogo = function(id){
         var req = {
             method: 'GET',
             url:'http://game-tcc.herokuapp.com/jogo/' + id,
