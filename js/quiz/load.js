@@ -8,6 +8,7 @@ var loadState = {
         //
         game.load.image('fundo','img/fundo.png');
         game.load.setPreloadSprite(progressBar);
+        game.load.spritesheet('botao', 'img/botao.png', 193, 71);
     },
 
     create: function(){
