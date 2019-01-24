@@ -82,8 +82,13 @@ app.config(function($routeProvider) {
         controller: 'palavraCtrl'
     })
 
-    .when('/jogo1/:id', {
-        templateUrl: 'view/jogo/jogo1.html',
+    .when('/jogos/:id', {
+        templateUrl: 'view/paciente/jogos.html',
+        controller: 'jogoCtrl'
+    })
+
+    .when('/quiz', {
+        templateUrl: 'view/jogo/quizPalavras.html',
         controller: 'jogoCtrl'
     })
 

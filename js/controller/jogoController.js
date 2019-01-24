@@ -6,7 +6,6 @@ app.controller('jogoCtrl', function($scope, $routeParams, jogoService) {
         
     })
     .catch(function(error){
-        alert("Não foi possível listar os dados");
     })
     //
     jogoService.getJogo($routeParams.id)
@@ -15,6 +14,6 @@ app.controller('jogoCtrl', function($scope, $routeParams, jogoService) {
         console.log($scope.jogo);
     })
     .catch(function(error){
-        alert("Não foi possível listar os dados");
     })
+    //
 })
