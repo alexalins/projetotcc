@@ -5,11 +5,19 @@ var palavras = [];
 var corretas = [];
 var erradas = [];
 var jogadas = 1;
+var pontos = 0;
+var tempo = 0;
+//
 var facilState = {
     create: function () {
+        request();
+        //
         var txtJogo = game.add.text(game.world.centerX, 125, 'ESCOLHA A PALAVRA ESCRITA CORRETAMENTE', { font: '18px emulogic', fill: '#fff' });
         txtJogo.anchor.set(.5);
         montarCenario();
+    },
+    update: function (){
+        tempo++;
     }
 };
 
@@ -34,6 +42,7 @@ function verificaResp(botao) {
         if (botao.data == correta) {
             this.gerandoOpcoes();
             this.montarCenario();
+            pontos += 10;
             //
             corretas.push(botao.data);
         } else {
@@ -45,7 +54,15 @@ function verificaResp(botao) {
         //
         jogadas++;
     } else {
-        console.log("FIM");
+        localStorage.setItem("pontos", pontos);
+        localStorage.setItem("tempo", tempo);
+        //
+        var jsonCorretas = JSON.stringify(corretas);
+        localStorage.setItem("corretas", jsonCorretas);
+        var jsonErradas = JSON.stringify(erradas);
+        localStorage.setItem("erradas", jsonErradas);
+        //
+        game.state.start('end');
     }
 }
 
@@ -54,19 +71,22 @@ function request() {
     var xhr = new XMLHttpRequest();
     xhr.open('GET', encodeURI('https://game-tcc.herokuapp.com/palavra/paciente/' + id));
     xhr.onload = function () {
+        //
         if (xhr.status === 200) {
-            //pega as palavras no nivel facil
             var req = JSON.parse(xhr.responseText);
-            for (let i = 0; i < req.length; i++) {
-                if (req[i].nivel == "facil") {
-                    palavras.push(req[i].palavra);
+            console.log(req);
+            if (req.length < 5 || req.length == 0) {
+                var alerta = confirm("Você não tem palavras cadastradas suficientes para jogar! Por favor, peça para seu fono cadastras suas palavras.");
+                if (alerta == true) {
+                    location.reload();
                 }
-            }
-            //se a lista de palavras por menor q 5 o jogo nao funciona
-            if (palavras.length < 5) {
-                alert("Você não tem palavras cadastradas suficientes para jogar! Por favor, peça para seu fono cadastras suas palavras.");
             } else {
-                palavras.sort();
+                //pega as palavras no nivel facil
+                for (let i = 0; i < req.length; i++) {
+                    if (req[i].nivel == "facil") {
+                        palavras.push(req[i].palavra);
+                    }
+                }
                 //
                 var jsonPalavras = JSON.stringify(palavras);
                 localStorage.setItem("palavras", jsonPalavras);
@@ -83,6 +103,12 @@ function request() {
 
 function gerandoOpcoes() {
     var palavras = JSON.parse(localStorage.getItem("palavras"));
+    if (palavras == null) {
+        var alerta = confirm("Você não tem palavras cadastradas suficientes para jogar! Por favor, peça para seu fono cadastras suas palavras.");
+        if (alerta == true) {
+            location.reload();
+        }
+    }
     var index = Math.floor(Math.random() * palavras.length);
     var palavra = palavras[index];
     //
@@ -141,6 +167,12 @@ function gerandoOpcoes() {
         var troca = palavra.replace("n", "m");
     }
     opcoes.push(troca);
+    var random = Math.floor(Math.random() * 2);
+    //
+    if(random == 0)
+        opcoes.sort();
+    else 
+        opcoes.reverse();
     // 
     return opcoes;
-}
+};
