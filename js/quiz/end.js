@@ -1,5 +1,6 @@
 var endState = {
     create: function () {
+        postRelatorio();
         var pontos = localStorage.getItem("pontos");
         var tempo = localStorage.getItem("tempo");
         //
@@ -15,16 +16,15 @@ var endState = {
 };
 
 function clickBotao(){
-    //postRelatorio();
     //
     var erradas = JSON.parse(localStorage.getItem("erradas"));
     for (let i = 0; i < erradas.length; i++) {
-        //postErros(erradas[i]);
+        postErros(erradas[i]);
     }
     //
     var corretas = JSON.parse(localStorage.getItem("corretas"));
     for (let i = 0; i < corretas.length; i++) {
-        //postAcertos(corretas[i]);
+        postAcertos(corretas[i]);
     }
     postPartida();
 
@@ -32,6 +32,7 @@ function clickBotao(){
 
 function postPartida(){
     var relatorio = JSON.parse(localStorage.getItem("relatorio"));
+    var nivel = localStorage.getItem("nivel");
     var dados = JSON.parse(localStorage.getItem("dados"));
     var tempo = localStorage.getItem("tempo");
     //
@@ -47,16 +48,16 @@ function postPartida(){
         "relatorio":{
             "id": relatorio.id
         },
-        "nivel": "facil",
-        "tempo": tempo
+        "nivel": nivel,
+        "tempo": tempo +" seg"
     });
     xhr.open('POST', url);
     xhr.setRequestHeader('Content-Type', 'application/json');
     //
     xhr.onload = function () {
         if (xhr.status === 200) {
-            localStorage.setItem("relatorio", xhr.responseText);
-            console.log("CADASTRO DE RELATORIO FEITO!");
+            console.log("Partida salva com sucesso!");
+            location.reload();
         } else{
             console.log("ERRO NO RELATORIO!");
         }
@@ -74,7 +75,6 @@ function postRelatorio(){
     xhr.onload = function () {
         if (xhr.status === 200) {
             localStorage.setItem("relatorio", xhr.responseText);
-            console.log("CADASTRO DE RELATORIO FEITO!");
         } else{
             console.log("ERRO NO RELATORIO!");
         }
@@ -84,6 +84,7 @@ function postRelatorio(){
 
 function postErros(erro){
     var relatorio = JSON.parse(localStorage.getItem("relatorio"));
+    console.log(relatorio.id);
     var xhr = new XMLHttpRequest();
     var url = "https://game-tcc.herokuapp.com/erro/";
     var data = JSON.stringify({
@@ -97,8 +98,6 @@ function postErros(erro){
     //
     xhr.onload = function () {
         if (xhr.status === 200) {
-            localStorage.getItem("relatorio", xhr.responseText);
-            console.log("CADASTRO DE RELATORIO FEITO!");
         } else{
             console.log("ERRO NO RELATORIO!");
         }
@@ -121,8 +120,6 @@ function postAcertos(acerto){
     //
     xhr.onload = function () {
         if (xhr.status === 200) {
-            localStorage.getItem("relatorio", xhr.responseText);
-            console.log("CADASTRO DE RELATORIO FEITO!");
         } else{
             console.log("ERRO NO RELATORIO!");
         }

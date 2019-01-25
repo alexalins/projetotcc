@@ -10,6 +10,7 @@ var tempo = 0;
 //
 var facilState = {
     create: function () {
+        localStorage.setItem("nivel", "facil");
         request();
         //
         var txtJogo = game.add.text(game.world.centerX, 125, 'ESCOLHA A PALAVRA ESCRITA CORRETAMENTE', { font: '18px emulogic', fill: '#fff' });
