@@ -33,7 +33,7 @@ app.config(function($routeProvider) {
     })
 
     .when('/cadastroPacientes', {
-        templateUrl: 'view/paciente/cadastroPaciente.html',
+        templateUrl: 'view/fono/cadastroPaciente.html',
         controller: 'cadastroCtrl'
     })
 

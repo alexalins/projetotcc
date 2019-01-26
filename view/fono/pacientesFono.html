@@ -1,12 +1,12 @@
 <nav style="background-color: #03a9f4">
-	<div class="nav-wrapper">
-		<a href="#/inicioFono" class="brand-logo">Game</a>
-		<ul id="nav-mobile" class="right hide-on-med-and-down">
-			<li><a href="#/pacientesFono">Meus Pacientes</a></li>
-			<li><a href="#/dadosFono">Meus Dados</a></li>
-			<li><a href="#/login">Sair</a></li>
-		</ul>
-	</div>
+    <div class="nav-wrapper">
+        <a href="#/inicioFono" class="brand-logo">Game</a>
+        <ul id="nav-mobile" class="right hide-on-med-and-down">
+            <li><a href="#/pacientesFono"><b>Meus Pacientes</b></a></li>
+            <li><a href="#/dadosFono"><b>Dados</b></a></li>
+            <li><a href="#/login"><b>Sair</b></a></li>
+        </ul>
+    </div>
 </nav>
 <div class="row">
 	<div class="col s12 m12">
@@ -23,27 +23,27 @@
 			<table class="centered" ng-if="fono.pacientes.length > 0">
 				<thead>
 					<tr>
-						<th>Nome</th>
-						<th>Nome do responsavel</th>
-						<th>Idade</th>
-						<th>Telefone</th>
-						<th>Rua</th>
-						<th>Bairro</th>
-						<th>Cidade</th>
-						<th>Ver Partidas</th>
-						<th>Ver Palavras</th>
+						<th>NOME</th>
+						<th>NOME DO RESPONSÁVEL</th>
+						<th>IDADE</th>
+						<th>TELEFONE</th>
+						<th>RUA</th>
+						<th>BAIRRO</th>
+						<th>CIDADE</th>
+						<th>VER PARTIDAS</th>
+						<th>VER PALAVRAS</th>
 					</tr>
 				</thead>
 
 				<tbody ng-repeat="paciente in fono.pacientes | filter: criterioDeBusca">
 					<tr>
-						<td>{{paciente.nome}}</td>
-						<td>{{paciente.nomeResponsavel}}</td>
-						<td>{{paciente.idade}}</td>
-						<td>{{paciente.telefone}}</td>
-						<td>{{paciente.endereco.rua}}</td>
-						<td>{{paciente.endereco.bairro}}</td>
-						<td>{{paciente.endereco.cidade}}</td>
+						<td>{{paciente.nome | uppercase}}</td>
+						<td>{{paciente.nomeResponsavel | uppercase}}</td>
+						<td>{{paciente.idade | uppercase}}</td>
+						<td>{{paciente.telefone | uppercase}}</td>
+						<td>{{paciente.endereco.rua | uppercase}}</td>
+						<td>{{paciente.endereco.bairro | uppercase}}</td>
+						<td>{{paciente.endereco.cidade | uppercase}}</td>
 						<td><a class="waves-effect waves-light btn" href="#/pacientePartida/{{paciente.id}}">Ver partidas</a></td>
 						<td><a class="waves-effect waves-light btn" href="#/palavraPartida/{{paciente.id}}">Ver palavras</a></td>
 					</tr>

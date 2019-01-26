@@ -2,10 +2,10 @@
 	<div class="nav-wrapper">
 		<a href="#/inicioPaciente" class="brand-logo">Game</a>
 		<ul id="nav-mobile" class="right hide-on-med-and-down">
-			<li><a href="#/inicioPaciente">Jogos</a></li>
-			<li><a href="#/dadosPaciente">Meus Dados</a></li>
-			<li><a href="#/partidasPaciente">Minhas Partidas</a></li>
-			<li><a href="../index.html">Sair</a></li>
+			<li><a href="#/inicioPaciente"><b>Jogos</b></a></li>
+			<li><a href="#/dadosPaciente"><b>Meus Dados</b></a></li>
+			<li><a href="#/partidasPaciente"><b>Minhas Partidas</b></a></li>
+			<li><a href="#/login"><b>Sair</b></a></li>
 		</ul>
 	</div>
 </nav>
@@ -15,30 +15,33 @@
 			<table class="centered">
 				<thead>
 					<tr>
-						<th>Nomo do jogo</th>
-						<th>Nivel</th>
-						<th>tempo</th>
+						<th>NOME DO JOGO</th>
+						<th>NÍVEL</th>
+						<th>TEMPO</th>
 					</tr>
 				</thead>
 				<tbody>
 					<tr>
-						<td>{{partida.jogo.nome}}</td>
-						<td>{{partida.nivel}}</td>
-						<td>{{partida.tempo}}</td>
+						<td>{{partida.jogo.nome | uppercase}}</td>
+						<td ng-if="partida.nivel == 'facil'">FÁCIL</td>
+						<td ng-if="partida.nivel == 'medio'">MÉDIO</td>
+						<td ng-if="partida.nivel == 'dificil'">DIFICÍL</td>
+						<td>{{partida.tempo | uppercase}}</td>
 					</tr>
 				</tbody>
 			</table>
+			<br />
 			<div class="col s6">
 				<table class="centered">
 					<thead>
 						<tr>
-							<th>Acerto</th>
+							<th>ACERTO</th>
 						</tr>
 					</thead>
 
 					<tbody ng-repeat="acertos in partida.relatorio.acertos">
 						<tr>
-							<td>{{acertos.palavra}}</td>
+							<td>{{acertos.palavra | uppercase}}</td>
 						</tr>
 					</tbody>
 				</table>
@@ -47,19 +50,21 @@
 				<table class="centered">
 					<thead>
 						<tr>
-							<th>Erro</th>
+							<th>ERRO</th>
 						</tr>
 					</thead>
 
 					<tbody ng-repeat="erros in partida.relatorio.erros">
 						<tr>
-							<td>{{erros.palavra}}</td>
+							<td>{{erros.palavra | uppercase}}</td>
 						</tr>
 					</tbody>
 				</table>
-				<br /><br /><br />
 			</div>
-			<canvas id="myChart" width="300" height="150"></canvas>
+			<div>
+				<canvas id="myChart" width="300" height="100"></canvas>
+			</div>
+			<br /><br /><br /><br /><br /><br />
 		</div>
 	</div>
 </div>

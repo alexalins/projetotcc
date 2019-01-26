@@ -2,10 +2,10 @@
 	<div class="nav-wrapper">
 		<a href="#/inicioPaciente" class="brand-logo">Game</a>
 		<ul id="nav-mobile" class="right hide-on-med-and-down">
-			<li><a href="#/inicioPaciente">Jogos</a></li>
-			<li><a href="#/dadosPaciente">Meus Dados</a></li>
-			<li><a href="#/partidasPaciente">Minhas Partidas</a></li>
-			<li><a href="../index.html">Sair</a></li>
+			<li><a href="#/inicioPaciente"><b>Jogos</b></a></li>
+			<li><a href="#/dadosPaciente"><b>Meus Dados</b></a></li>
+			<li><a href="#/partidasPaciente"><b>Minhas Partidas</b></a></li>
+			<li><a href="#/login"><b>Sair</b></a></li>
 		</ul>
 	</div>
 </nav>
@@ -19,20 +19,22 @@
 			<table class="centered" ng-if="paciente.partidas.length > 0">
 				<thead>
 					<tr>
-						<th>Jogo</th>
-						<th>Nivel</th>
-						<th>Tempo de jogo</th>
-						<th>Qnt. acertos</th>
-						<th>Qnt. erros</th>
-						<th>Ação</th>
+						<th>JOGO</th>
+						<th>NÍVEL</th>
+						<th>TEMPO DE JOGO</th>
+						<th>QNT. ACERTOS</th>
+						<th>QNT. ERROS</th>
+						<th>AÇÃO</th>
 					</tr>
 				</thead>
 
 				<tbody ng-repeat="partida in paciente.partidas | filter: criterioDeBusca">
 					<tr>
-						<td>{{partida.jogo.nome}}</td>
-						<td>{{partida.nivel}}</td>
-						<td>{{partida.tempo}}</td>
+						<td>{{partida.jogo.nome | uppercase}}</td>
+						<td ng-if="partida.nivel == 'facil'">FÁCIL</td>
+						<td ng-if="partida.nivel == 'medio'">MÉDIO</td>
+						<td ng-if="partida.nivel == 'dificil'">DIFICÍL</td>
+						<td>{{partida.tempo | uppercase}}</td>
 						<td>{{partida.relatorio.acertos.length}}</td>
 						<td>{{partida.relatorio.erros.length}}</td>
 						<td><a class="waves-effect waves-light btn" href="#/relatorioPartida/{{partida.id}}">Ver relatorio</a></td>
