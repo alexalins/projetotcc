@@ -12,6 +12,8 @@ game.state.add('load', loadState);
 game.state.add('menu', menuState);
 game.state.add('nivel', nivelState);
 game.state.add('facil', facilState);
+game.state.add('medio', medioState);
+game.state.add('dificil', dificilState);
 game.state.add('end', endState);
 
 game.state.start('boot');

@@ -10,45 +10,42 @@ var tempo = 0;
 //
 var facilState = {
     create: function () {
-        localStorage.setItem("nivel", "facil");
-        request();
-        //
         var txtJogo = game.add.text(game.world.centerX, 125, 'ESCOLHA A PALAVRA ESCRITA CORRETAMENTE', { font: '18px emulogic', fill: '#fff' });
         txtJogo.anchor.set(.5);
-        montarCenario();
+        montarCenarioFacil();
     },
     update: function () {
         tempo++;
     }
 };
 
-function montarCenario() {
-    var opcoes = gerandoOpcoes();
-    console.log(opcoes);
-    var opcaoA = game.add.button(game.world.centerX - 95, 200, 'botao', verificaResp, this, 2, 1, 0);
-    opcaoA.data = opcoes[0];
-    var opcaoB = game.add.button(game.world.centerX - 95, 300, 'botao', verificaResp, this, 2, 1, 0);
-    opcaoB.data = opcoes[1];
+function montarCenarioFacil() {
+    var opcoes = gerandoOpcoesFacil();
     //
-    var txtOpcaoA = game.add.text(game.world.centerX, 240, opcoes[0], { font: '18px emulogic', fill: '#000000' });
-    txtOpcaoA.anchor.set(.8);
-    var txtOpcaoB = game.add.text(game.world.centerX, 340, opcoes[1], { font: '18px emulogic', fill: '#000000' });
-    txtOpcaoB.anchor.set(.8);
+    var opcaoFacilA = game.add.button(game.world.centerX - 95, 200, 'botao', verificaRespFacil, this, 2, 1, 0);
+    opcaoFacilA.data = opcoes[0];
+    var opcaoFacilB = game.add.button(game.world.centerX - 95, 300, 'botao', verificaRespFacil, this, 2, 1, 0);
+    opcaoFacilB.data = opcoes[1];
+    //
+    var txtOpcaoFacilA = game.add.text(game.world.centerX, 240, opcoes[0], { font: '18px emulogic', fill: '#000000' });
+    txtOpcaoFacilA.anchor.set(.8);
+    var txtOpcaoFacilB = game.add.text(game.world.centerX, 340, opcoes[1], { font: '18px emulogic', fill: '#000000' });
+    txtOpcaoFacilB.anchor.set(.8);
 }
 
-function verificaResp(botao) {
+function verificaRespFacil(botao) {
     var correta = localStorage.getItem("correta");
     //
     if (jogadas <= 10) {
         if (botao.data == correta) {
-            this.gerandoOpcoes();
-            this.montarCenario();
+            this.gerandoOpcoesFacil();
+            this.montarCenarioFacil();
             pontos += 10;
             //
             corretas.push(botao.data);
         } else {
-            this.gerandoOpcoes();
-            this.montarCenario();
+            this.gerandoOpcoesFacil();
+            this.montarCenarioFacil();
             //
             erradas.push(botao.data);
         }
@@ -67,7 +64,7 @@ function verificaResp(botao) {
     }
 }
 
-function request() {
+function requestFacil() {
     //pega um json cm as palavras
     var xhr = new XMLHttpRequest();
     xhr.open('GET', encodeURI('https://game-tcc.herokuapp.com/palavra/paciente/' + id));
@@ -101,7 +98,7 @@ function request() {
     xhr.send();
 }
 
-function gerandoOpcoes() {
+function gerandoOpcoesFacil() {
     var palavras = JSON.parse(localStorage.getItem("palavras"));
     //
     if (palavras == null) {
