@@ -16,7 +16,6 @@ var endState = {
 };
 
 function clickBotao(){
-    //
     var erradas = JSON.parse(localStorage.getItem("erradas"));
     for (let i = 0; i < erradas.length; i++) {
         postErros(erradas[i]);
@@ -56,7 +55,6 @@ function postPartida(){
     //
     xhr.onload = function () {
         if (xhr.status === 200) {
-            console.log("Partida salva com sucesso!");
             location.reload();
         } else{
             console.log("ERRO NO RELATORIO!");

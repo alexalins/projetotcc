@@ -1,11 +1,25 @@
 <!DOCTYPE html>
 <html>
+
 <head>
 	<title>Quiz Palavras</title>
+	<link rel="stylesheet" type="text/css" href="css/materialize.min.css">
 	<link rel="stylesheet" type="text/css" href="css/style.css">
 </head>
-<body>
-	<h1 align="center">Quiz Palavra</h1>
+
+<body background="img/fundo.png">
+	<div class="row">
+		<div class="col s12">
+			<div class="card" align="center">
+				<div class="card-content">
+					<br/><br/>
+					<div class="row">
+						<div id="jogo" align="center"></div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
 	<script src="lib/phaser.min.js"></script>
 	<script src="js/quiz/boot.js"></script>
 	<script src="js/quiz/load.js"></script>
@@ -15,4 +29,5 @@
 	<script src="js/quiz/end.js"></script>
 	<script src="js/quiz/game.js"></script>
 </body>
+
 </html>

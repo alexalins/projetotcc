@@ -17,7 +17,7 @@ var facilState = {
         txtJogo.anchor.set(.5);
         montarCenario();
     },
-    update: function (){
+    update: function () {
         tempo++;
     }
 };
@@ -75,7 +75,6 @@ function request() {
         //
         if (xhr.status === 200) {
             var req = JSON.parse(xhr.responseText);
-            console.log(req);
             if (req.length < 5 || req.length == 0) {
                 var alerta = confirm("Você não tem palavras cadastradas suficientes para jogar! Por favor, peça para seu fono cadastras suas palavras.");
                 if (alerta == true) {
@@ -104,6 +103,7 @@ function request() {
 
 function gerandoOpcoes() {
     var palavras = JSON.parse(localStorage.getItem("palavras"));
+    //
     if (palavras == null) {
         var alerta = confirm("Você não tem palavras cadastradas suficientes para jogar! Por favor, peça para seu fono cadastras suas palavras.");
         if (alerta == true) {
@@ -170,9 +170,9 @@ function gerandoOpcoes() {
     opcoes.push(troca);
     var random = Math.floor(Math.random() * 2);
     //
-    if(random == 0)
+    if (random == 0)
         opcoes.sort();
-    else 
+    else
         opcoes.reverse();
     // 
     return opcoes;
