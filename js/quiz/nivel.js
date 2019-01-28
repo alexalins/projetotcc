@@ -13,21 +13,20 @@ var nivelState = {
         txtNivelMedio.anchor.set(.65);
         var txtNivelMedio = game.add.text(game.world.centerX, 390, 'DIFICIL', { font: '22px emulogic', fill: '#000000' });
         txtNivelMedio.anchor.set(.62);
-        //
-        function facil() {
-            localStorage.setItem("nivel", "facil");
-            requestFacil();
-            game.state.start('facil');
-        }
-        function medio() {
-            localStorage.setItem("nivel", "medio");
-            requestMedio();
-            game.state.start('medio');
-        }
-        function dificil() {
-            localStorage.setItem("nivel", "dificil");
-            requestDificil();
-            game.state.start('dificil');
-        }
     }
 };
+
+function facil() {
+    localStorage.setItem("nivel", "facil");
+    request();
+}
+
+function medio() {
+    localStorage.setItem("nivel", "medio");
+    request();
+}
+
+function dificil() {
+    localStorage.setItem("nivel", "dificil");
+    request();
+}

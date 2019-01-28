@@ -1,0 +1,61 @@
+var dados = localStorage.getItem("dados");
+var obj = JSON.parse(dados);
+var id = obj.id;
+var palavras = [];
+var corretas = [];
+var erradas = [];
+var jogadas = 1;
+var pontos = 0;
+var tempo = 0;
+//
+var facilState = {
+    preload() {
+        this.load.image('player', 'img/player.png');
+        this.load.image('coin', 'img/coin.png');
+    },
+
+    create() {
+        this.player = this.physics.add.sprite(100, 100, 'player');
+        this.coin = this.physics.add.sprite(300, 200, 'coin');
+
+        this.score = 0;
+        let style = { font: '20px Arial', fill: '#fff' };
+        this.scoreText = this.add.text(20, 20, 'score: ' + this.score, style);
+
+        this.arrow = this.input.keyboard.createCursorKeys();
+    },
+
+    update() {
+        if (this.physics.overlap(this.player, this.coin)) {
+            this.hit();
+        }
+
+        if (this.arrow.right.isDown) {
+            this.player.x += 3;
+        } else if (this.arrow.left.isDown) {
+            this.player.x -= 3;
+        }
+
+        if (this.arrow.down.isDown) {
+            this.player.y += 3;
+        } else if (this.arrow.up.isDown) {
+            this.player.y -= 3;
+        }
+    },
+
+    hit() {
+        this.coin.x = Phaser.Math.Between(100, 600);
+        this.coin.y = Phaser.Math.Between(100, 200);
+
+        this.score += 10;
+        this.scoreText.setText('score: ' + this.score);
+
+        this.tweens.add({
+            targets: this.player,
+            duration: 200,
+            scaleX: 1.2,
+            scaleY: 1.2,
+            yoyo: true,
+        });
+    }
+};
