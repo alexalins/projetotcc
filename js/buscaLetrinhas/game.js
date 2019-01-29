@@ -6,6 +6,7 @@ class mainScene {
   
     create() {
       this.player = this.physics.add.sprite(100, 100, 'player');
+      this.player.setCollideWorldBounds(true);
       this.coin = this.physics.add.sprite(300, 200, 'coin');
   
       this.score = 0;
