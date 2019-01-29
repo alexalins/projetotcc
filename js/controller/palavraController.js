@@ -35,6 +35,15 @@ app.controller('palavraCtrl', function ($scope, $routeParams, $location, palavra
         }
     }
     //
+    $scope.removerPalavra = function (id) {
+        palavraService.removerPalavra(id)
+        .then(function (success) {
+            location.reload();
+        })
+        .catch(function (error) {
+        })
+    }
+    //
     var i = 1;
     $scope.exibirOpcao = function () {
 

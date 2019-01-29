@@ -25,5 +25,18 @@ app.service("palavraService", ["$http", function($http){
 
         return $http(req);
     }
+    //
+    this.removerPalavra = function(id){
+
+        var req = {
+            method: 'DELETE',
+            url:'http://game-tcc.herokuapp.com/palavra/' + id,
+            headers: {
+                'Content-Type' : 'application/json'
+            }
+        }
+
+        return $http(req);
+    }
 
 }])
