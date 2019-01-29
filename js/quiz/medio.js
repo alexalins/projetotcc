@@ -21,18 +21,21 @@ var medioState = {
 function montarCenarioMedio() {
     var opcoes = gerandoOpcoesMedio();
     //
-    var opcaoMedioA = game.add.button(game.world.centerX - 95, 200, 'botao', verificaRespMedio, this, 2, 1, 0);
+    var opcaoMedioA = game.add.button(game.world.centerX - 100, 200, 'botao', verificaRespMedio, this, 2, 1, 0);
     opcaoMedioA.data = opcoes[0];
-    var opcaoMedioB = game.add.button(game.world.centerX - 95, 300, 'botao', verificaRespMedio, this, 2, 1, 0);
+    opcaoMedioA.width = 200;
+    var opcaoMedioB = game.add.button(game.world.centerX - 100, 300, 'botao', verificaRespMedio, this, 2, 1, 0);
     opcaoMedioB.data = opcoes[1];
-    var opcaoMedioC = game.add.button(game.world.centerX - 95, 400, 'botao', verificaRespMedio, this, 2, 1, 0);
+    opcaoMedioB.width = 200;
+    var opcaoMedioC = game.add.button(game.world.centerX - 100, 400, 'botao', verificaRespMedio, this, 2, 1, 0);
     opcaoMedioC.data = opcoes[2];
+    opcaoMedioC.width = 200;
     //
-    var txtOpcaoMedioA = game.add.text(game.world.centerX, 240, opcoes[0], { font: '18px emulogic', fill: '#000000' });
+    var txtOpcaoMedioA = game.add.text(game.world.centerX + 20, 240, opcoes[0], { font: '18px emulogic', fill: '#000000' });
     txtOpcaoMedioA.anchor.set(.65);
-    var txtOpcaoMedioB = game.add.text(game.world.centerX, 340, opcoes[1], { font: '18px emulogic', fill: '#000000' });
+    var txtOpcaoMedioB = game.add.text(game.world.centerX + 20, 340, opcoes[1], { font: '18px emulogic', fill: '#000000' });
     txtOpcaoMedioB.anchor.set(.65);
-    var txtOpcaoMedioC = game.add.text(game.world.centerX, 440, opcoes[2], { font: '18px emulogic', fill: '#000000' });
+    var txtOpcaoMedioC = game.add.text(game.world.centerX + 20, 440, opcoes[2], { font: '18px emulogic', fill: '#000000' });
     txtOpcaoMedioC.anchor.set(.65);
 }
 

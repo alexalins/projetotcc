@@ -5,9 +5,8 @@ var loadState = {
         //
         var progressBar = game.add.sprite(game.world.centerX, 250, 'progressBar');
         progressBar.anchor.set(.5);
-        //
-        game.load.image('fundo','img/fundo.png');
         game.load.setPreloadSprite(progressBar);
+        //
         game.load.spritesheet('botao', 'img/botao.png', 193, 71);
     },
 

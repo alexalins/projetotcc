@@ -22,14 +22,16 @@ var facilState = {
 function montarCenarioFacil() {
     var opcoes = gerandoOpcoesFacil();
     //
-    var opcaoFacilA = game.add.button(game.world.centerX - 95, 200, 'botao', verificaRespFacil, this, 2, 1, 0);
+    var opcaoFacilA = game.add.button(game.world.centerX - 100, 200, 'botao', verificaRespFacil, this, 2, 1, 0);
     opcaoFacilA.data = opcoes[0];
-    var opcaoFacilB = game.add.button(game.world.centerX - 95, 300, 'botao', verificaRespFacil, this, 2, 1, 0);
+    opcaoFacilA.width = 200;
+    var opcaoFacilB = game.add.button(game.world.centerX - 100, 300, 'botao', verificaRespFacil, this, 2, 1, 0);
     opcaoFacilB.data = opcoes[1];
+    opcaoFacilB.width = 200;
     //
-    var txtOpcaoFacilA = game.add.text(game.world.centerX, 240, opcoes[0], { font: '18px emulogic', fill: '#000000' });
+    var txtOpcaoFacilA = game.add.text(game.world.centerX + 20, 240, opcoes[0], { font: '18px emulogic', fill: '#000000' });
     txtOpcaoFacilA.anchor.set(.8);
-    var txtOpcaoFacilB = game.add.text(game.world.centerX, 340, opcoes[1], { font: '18px emulogic', fill: '#000000' });
+    var txtOpcaoFacilB = game.add.text(game.world.centerX + 20, 340, opcoes[1], { font: '18px emulogic', fill: '#000000' });
     txtOpcaoFacilB.anchor.set(.8);
 }
 

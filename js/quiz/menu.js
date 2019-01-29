@@ -7,8 +7,8 @@ var menuState = {
         //txtPressStart.anchor.set(.5);
         //game.add.tween(txtPressStart).to({y:250}, 1000).start();
         //
-        var botaoPlay = game.add.button(game.world.centerX - 95, 300, 'botao', play, this, 2, 1, 0);
-        var txtPressStart = game.add.text(game.world.centerX, 340, 'PLAY', {font:'20px emulogic', fill: '#000000'});
+        var botaoPlay = game.add.button(game.world.centerX - 80 , 300, 'botao', play, this, 2, 1, 0);
+        var txtPressStart = game.add.text(game.world.centerX + 10, 340, 'PLAY', {font:'20px emulogic', fill: '#000000'});
         txtPressStart.anchor.set(.7);
         //
         function play(){

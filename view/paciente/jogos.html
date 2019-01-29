@@ -22,10 +22,16 @@
                         <p>Como jogar:</p>
                         <p>{{jogo.instrucao}}</p>
                         <br /><br />
-                        <div align="center">
-                            <a class="waves-effect waves-light btn-small" href="../../quizPalavras.html"><i class="material-icons right">file_download</i>
+                        <div align="center" ng-show="jogo.id == 1">
+                            <a class="waves-effect waves-light btn-large" href="../../quizPalavras.html"><i class="material-icons right">play_arrow</i>
                                 Jogar </a>
                         </div>
+                        <div align="center" ng-show="jogo.id == 2">
+                            <a class="waves-effect waves-light btn-large" href="../../buscaLetras.html"><i class="material-icons right">play_arrow</i>
+                                Jogar </a>
+                        </div>
+                        <br /><br />
+                        <img ng-src="{{jogo.foto}}"></img>
                     </div>
                 </div>
             </div>

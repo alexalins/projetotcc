@@ -22,22 +22,26 @@ var dificilState = {
 function montarCenarioDificil() {
     var opcoes = gerandoOpcoesDificil();
     //
-    var opcaoDificilA = game.add.button(game.world.centerX - 200, 200, 'botao', verificaRespDificil, this, 2, 1, 0);
+    var opcaoDificilA = game.add.button(game.world.centerX - 250, 200, 'botao', verificaRespDificil, this, 2, 1, 0);
     opcaoDificilA.data = opcoes[0];
-    var opcaoDificilB = game.add.button(game.world.centerX - 200, 300, 'botao', verificaRespDificil, this, 2, 1, 0);
+    opcaoDificilA.width = 200;
+    var opcaoDificilB = game.add.button(game.world.centerX - 250, 300, 'botao', verificaRespDificil, this, 2, 1, 0);
     opcaoDificilB.data = opcoes[1];
+    opcaoDificilB.width = 200;
     var opcaoDificilC = game.add.button(game.world.centerX + 50, 200, 'botao', verificaRespDificil, this, 2, 1, 0);
     opcaoDificilC.data = opcoes[2];
+    opcaoDificilC.width = 200;
     var opcaoDificilD = game.add.button(game.world.centerX + 50, 300, 'botao', verificaRespDificil, this, 2, 1, 0);
     opcaoDificilD.data = opcoes[3];
+    opcaoDificilD.width = 200;
     //
-    var txtOpcaoDificilA = game.add.text(game.world.centerX - 100, 240, opcoes[0], { font: '18px emulogic', fill: '#000000' });
+    var txtOpcaoDificilA = game.add.text(game.world.centerX - 130, 240, opcoes[0], { font: '18px emulogic', fill: '#000000' });
     txtOpcaoDificilA.anchor.set(.65);
-    var txtOpcaoDificilB = game.add.text(game.world.centerX - 100, 340, opcoes[1], { font: '18px emulogic', fill: '#000000' });
+    var txtOpcaoDificilB = game.add.text(game.world.centerX - 130, 340, opcoes[1], { font: '18px emulogic', fill: '#000000' });
     txtOpcaoDificilB.anchor.set(.65);
-    var txtOpcaoDificilC = game.add.text(game.world.centerX + 150, 240, opcoes[2], { font: '18px emulogic', fill: '#000000' });
+    var txtOpcaoDificilC = game.add.text(game.world.centerX + 170, 240, opcoes[2], { font: '18px emulogic', fill: '#000000' });
     txtOpcaoDificilC.anchor.set(.65);
-    var txtOpcaoDificilD = game.add.text(game.world.centerX + 150, 340, opcoes[3], { font: '18px emulogic', fill: '#000000' });
+    var txtOpcaoDificilD = game.add.text(game.world.centerX + 170, 340, opcoes[3], { font: '18px emulogic', fill: '#000000' });
     txtOpcaoDificilD.anchor.set(.65);
 }
 
