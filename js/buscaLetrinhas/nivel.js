@@ -19,11 +19,11 @@ var nivelState = {
             //requestFacil();
             game.state.start('facil');
         }
+        //
         function medio() {
-            localStorage.setItem("nivel", "medio");
-            requestMedio();
             game.state.start('medio');
         }
+        //
         function dificil() {
             localStorage.setItem("nivel", "dificil");
             requestDificil();

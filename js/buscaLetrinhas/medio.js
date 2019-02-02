@@ -7,7 +7,7 @@ var bulletTime = 0;
 var frameTime = 0;
 var frames;
 var prevCamX = 0;
-var facilState = {
+var medioState = {
 
     create: function () {
 
@@ -21,26 +21,22 @@ var facilState = {
         }
         //
         baddies = game.add.group();
-        for (var i = 0; i < 20; i++) {
+        for (var i = 0; i < 16; i++) {
             baddies.create(game.world.randomX, game.world.randomY, 'baddie');
         }
         //
         player = game.add.sprite(100, 300, 'nave');
         player.anchor.x = 0.5;
-        game.physics.arcade.enable([player, baddies]);
-        //
-        player.body.isCircle = true;
+        game.physics.arcade.enable(player);
         player.body.collideWorldBounds = true;
         //
         game.camera.follow(player, Phaser.Camera.FOLLOW_LOCKON, 0.1);
         cursors = game.input.keyboard.createCursorKeys();
         prevCamX = game.camera.x;
-       
+
     },
 
     update: function () {
-
-        game.physics.arcade.overlap(player, baddies, collisionHandler, null, this);
 
         if (cursors.left.isDown) {
             player.x -= 8;
@@ -61,8 +57,3 @@ var facilState = {
         prevCamX = game.camera.x;
     }
 };
-
-function collisionHandler (obj1, obj2) {
-
-    console.log("bateu");
-}
