@@ -12,8 +12,7 @@ Baddies = function (game) {
 
     frame = game.rnd.between(0, 35);
 
-    if (frame === 17)
-    {
+    if (frame === 17) {
         frame = 1;
     }
 
@@ -31,7 +30,7 @@ Asteroid = function (game) {
     var x = game.rnd.between(100, 770);
     var y = game.rnd.between(0, 570);
 
-    Phaser.Sprite.call(this, game, x, y, 'asteroid', 17);
+    Phaser.Sprite.call(this, game, x, y, 'z', 17);
 
     game.physics.arcade.enable(this);
 };
@@ -50,15 +49,13 @@ var facilState = {
         }
         //
         group = game.add.group();
-        for (var i = 0; i < 20; i++)
-        {
-            if (i < 10)
-            {
+        for (var i = 0; i < 20; i++) {
+            if (i < 10) {
                 group.add(new Baddies(game));
             }
-            else
-            {
-                group.add(new Asteroid(game));
+            else {
+                sprite = group.add(new Asteroid(game));
+                console.log(sprite);
             }
         }
         //
