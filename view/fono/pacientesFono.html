@@ -35,7 +35,7 @@
 					</tr>
 				</thead>
 
-				<tbody ng-repeat="paciente in fono.pacientes | filter: criterioDeBusca">
+				<tbody ng-repeat="paciente in fono.pacientes | filter: criterioDeBusca | orderBy:'$index':true">
 					<tr>
 						<td>{{paciente.nome | uppercase}}</td>
 						<td>{{paciente.nomeResponsavel | uppercase}}</td>

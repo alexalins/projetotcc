@@ -27,7 +27,7 @@
 					</tr>
 				</thead>
 
-				<tbody ng-repeat="partida in paciente.partidas | filter: criterioDeBusca">
+				<tbody ng-repeat="partida in paciente.partidas | filter: criterioDeBusca | orderBy:'$index':true">
 					<tr>
 						<td>{{partida.jogo.nome | uppercase}}</td>
 						<td ng-if="partida.nivel == 'facil'">FÁCIL</td>

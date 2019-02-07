@@ -29,7 +29,7 @@
 						<th>AÇÃO</th>
 					</tr>
 				</thead>
-				<tbody ng-repeat="palavra in palavras | filter: criterioDeBusca">
+				<tbody ng-repeat="palavra in palavras | filter: criterioDeBusca | orderBy:'$index':true">
 					<tr>
 						<td>{{palavra.palavra | uppercase}}</td>
 						<td ng-if="palavra.nivel == 'facil'">FÁCIL</td>

@@ -24,11 +24,11 @@
 						<th>TEMPO DE JOGO</th>
 						<th>QNT. ACERTOS</th>
 						<th>QNT. ERROS</th>
-						<th>AÇÃO</th>
+						<!--<th>AÇÃO</th>-->
 					</tr>
 				</thead>
 
-				<tbody ng-repeat="partida in paciente.partidas | filter: criterioDeBusca">
+				<tbody ng-repeat="partida in paciente.partidas | filter: criterioDeBusca | orderBy:'$index':true">
 					<tr>
 						<td>{{partida.jogo.nome | uppercase}}</td>
 						<td ng-if="partida.nivel == 'facil'">FÁCIL</td>
@@ -37,7 +37,7 @@
 						<td>{{partida.tempo | uppercase}}</td>
 						<td>{{partida.relatorio.acertos.length}}</td>
 						<td>{{partida.relatorio.erros.length}}</td>
-						<td><a class="waves-effect waves-light btn" href="#/relatorioPartida/{{partida.id}}">Ver relatorio</a></td>
+						<!--<td><a class="waves-effect waves-light btn" href="#/relatorioPartida/{{partida.id}}">Ver relatorio</a></td>-->
 					</tr>
 				</tbody>
 			</table>
