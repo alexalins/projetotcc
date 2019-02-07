@@ -5,16 +5,26 @@ var erradas = [];
 var jogadas = 1;
 var pontos = 0;
 var tempo = 0;
+var txtPonto;
+var txtTempo;
 //
 var medioState = {
     create: function () {
         //
         var txtJogo = game.add.text(game.world.centerX, 125, 'ESCOLHA A PALAVRA ESCRITA CORRETAMENTE', { font: '18px emulogic', fill: '#fff' });
         txtJogo.anchor.set(.5);
+        txtPonto = game.add.text(200, 50, "Pontos: 0", { font: '18px emulogic', fill: '#fff' });
+        txtPonto.anchor.set(.65);
+        txtTempo = game.add.text(600, 50, "Tempo: 000 s", { font: '18px emulogic', fill: '#fff' });
+        txtTempo.anchor.set(.65);
         montarCenarioMedio();
     },
     update: function () {
+        txtTempo.text = "";
+        txtPonto.text = "";
         tempo++;
+        txtTempo.text = "Tempo: " + ((tempo / 60) / 60).toFixed(2) + "s";
+        txtPonto.text = "Ponto: " + pontos;
     }
 };
 
@@ -73,7 +83,7 @@ function verificaRespMedio(botao) {
 function gerandoOpcoesMedio() {
     var palavras = JSON.parse(localStorage.getItem("palavras"));
     //
-    if (palavras == null) {
+    if (palavras == null  || palavras.length <= 5) {
         var alerta = confirm("Você não tem palavras cadastradas suficientes para jogar! Por favor, peça para seu fono cadastras suas palavras.");
         if (alerta == true) {
             location.reload();

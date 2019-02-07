@@ -15,19 +15,18 @@ var nivelState = {
         txtNivelMedio.anchor.set(.62);
         //
         function facil() {
-            //localStorage.setItem("nivel", "facil");
-            //requestFacil();
-            game.state.start('facil');
+            localStorage.setItem("nivel", "facil");
+            request();
         }
         //
         function medio() {
-            game.state.start('medio');
+            localStorage.setItem("nivel", "medio");
+            request();
         }
         //
         function dificil() {
             localStorage.setItem("nivel", "dificil");
-            requestDificil();
-            game.state.start('dificil');
+            request();
         }
     }
 };

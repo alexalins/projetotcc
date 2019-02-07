@@ -4,13 +4,13 @@ var endState = {
         var pontos = localStorage.getItem("pontos");
         var tempo = localStorage.getItem("tempo");
         //
-        var txtPontos = game.add.text(game.world.centerX, 200, 'SEUS PONTOS: ' + pontos, { font: '18px emulogic', fill: '#fff' });
+        var txtPontos = game.add.text(400, 150, 'SEUS PONTOS: ' + pontos, { font: '18px emulogic', fill: '#00ff44' });
         txtPontos.anchor.set(.5);
-        var txtTempo = game.add.text(game.world.centerX, 300, 'SEU TEMPO: ' + ((tempo/60)/60).toFixed(2) +"s", { font: '18px emulogic', fill: '#fff' });
+        var txtTempo = game.add.text(400, 250, 'SEU TEMPO: ' + ((tempo/60)/60).toFixed(2) +"s", { font: '18px emulogic', fill: '#00ff44' });
         txtTempo.anchor.set(.5);
         //
-        var botao = game.add.button(game.world.centerX - 95, 400, 'botao', clickBotao, this, 2, 1, 0);
-        var txtBotao= game.add.text(game.world.centerX, 440, 'INICIO', { font: '18px emulogic', fill: '#00000' });
+        var botao = game.add.button(400 - 95, 400, 'botao', clickBotao, this, 2, 1, 0);
+        var txtBotao= game.add.text(400, 440, 'INICIO', { font: '18px emulogic', fill: '#00000' });
         txtBotao.anchor.set(.7);
     }
 };

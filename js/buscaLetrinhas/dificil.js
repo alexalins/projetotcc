@@ -44,11 +44,11 @@ Asteroid = function (game, letra, y) {
 Asteroid.prototype = Object.create(Phaser.Sprite.prototype);
 Asteroid.prototype.constructor = Asteroid;
 //
-var medioState = {
+var dificilState = {
 
     create: function () {
         game.physics.startSystem(Phaser.Physics.ARCADE);
-        game.world.setBounds(0, 0, 600 * 2, 700);
+        game.world.setBounds(0, 0, 600 * 2, 1000);
         //
         stars = game.add.group();
         for (var i = 0; i < 80; i++) {
@@ -60,7 +60,7 @@ var medioState = {
             group.add(new Baddies(game));
         }
         //
-        montandoCenarioMedio();
+        montandoCenarioDificil();
         //
         player = game.add.sprite(100, 200, 'nave');
         player.anchor.x = 0.5;
@@ -77,7 +77,7 @@ var medioState = {
         tempo++;
         txtTempo.text = "";
         txtPonto.text = "";
-        game.physics.arcade.overlap(player, group, colisorMedio, null, this);
+        game.physics.arcade.overlap(player, group, colisorDificil, null, this);
         //
         if (cursors.left.isDown) {
             player.x -= 8;
@@ -108,7 +108,7 @@ var medioState = {
 };
 
 
-function colisorMedio(player, letra) {
+function colisorDificil(player, letra) {
     coletorLetras = coletorLetras + letra.data;
     txtPalavra.text = coletorLetras;
     letra.kill();
@@ -130,7 +130,7 @@ function colisorMedio(player, letra) {
         //
         if (partidas != 10) {
             partidas++;
-            montandoCenarioMedio();
+            montandoCenarioDificil();
         } else {
             var jsonCorretas = JSON.stringify(corretas);
             localStorage.setItem("corretas", jsonCorretas);
@@ -145,10 +145,10 @@ function colisorMedio(player, letra) {
     }
 }
 
-function montandoCenarioMedio() {
+function montandoCenarioDificil() {
     coletorLetras = "";
     //
-    letras = gerandoPalavrasMedio();
+    letras = gerandoPalavrasDificil();
     for (var i = 0; i < letras.length; i++) {
         sprite = group.add(new Asteroid(game, letras[i], (80 * i)));
         sprite.data = letras[i];
@@ -164,10 +164,10 @@ function montandoCenarioMedio() {
     txtTempo.anchor.set(.65);
 }
 
-function gerandoPalavrasMedio(palavras) {
+function gerandoPalavrasDificil(palavras) {
     var palavras = JSON.parse(localStorage.getItem("palavras"));
     //
-    if (palavras == null  || palavras.length <= 5) {
+    if (palavras == null || palavras.length <= 5) {
         var alerta = confirm("Você não tem palavras cadastradas suficientes para jogar! Por favor, peça para seu fono cadastras suas palavras.");
         if (alerta == true) {
             location.reload();

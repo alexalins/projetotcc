@@ -1,6 +1,7 @@
 function request() {
-    var obj = JSON.parse(dados);
+    var obj = JSON.parse(localStorage.getItem("dados"));
     var id = obj.id;
+    var palavras = [];
     //
     axios.get('https://game-tcc.herokuapp.com/palavra/paciente/' + id)
         .then(function (response) {
@@ -31,7 +32,7 @@ function postPartida() {
     //
     axios.post("https://game-tcc.herokuapp.com/partida", {
         "jogo": {
-            "id": 1
+            "id": 2
         },
         "paciente": {
             "id": dados.id
