@@ -96,7 +96,7 @@ var dificilState = {
         }
         //
         prevCamX = game.camera.x;
-        txtTempo.text = "Tempo: " + ((tempo / 60) / 60).toFixed(2) + "s";
+        txtTempo.text = "Tempo: " + ((tempo / 60) / 60).toFixed(2) + " min";
         txtPonto.text = "Ponto: " + pontos;
     },
 
@@ -138,7 +138,7 @@ function colisorDificil(player, letra) {
             localStorage.setItem("erradas", jsonErradas);
             //
             localStorage.setItem("pontos", pontos);
-            localStorage.setItem("tempo", tempo);
+            localStorage.setItem("tempo", ((tempo / 60) / 60).toFixed(2));
             //
             game.state.start('end');
         }

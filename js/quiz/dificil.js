@@ -24,7 +24,7 @@ var dificilState = {
         txtTempo.text = "";
         txtPonto.text = "";
         tempo++;
-        txtTempo.text = "Tempo: " + ((tempo / 60) / 60).toFixed(2) + "s";
+        txtTempo.text = "Tempo: " + ((tempo / 60) / 60).toFixed(2) + " min";
         txtPonto.text = "Ponto: " + pontos;
     }
 };
@@ -75,7 +75,7 @@ function verificaRespDificil(botao) {
         jogadas++;
     } else {
         localStorage.setItem("pontos", pontos);
-        localStorage.setItem("tempo", tempo);
+        localStorage.setItem("tempo", ((tempo / 60) / 60).toFixed(2));
         //
         var jsonCorretas = JSON.stringify(corretas);
         localStorage.setItem("corretas", jsonCorretas);

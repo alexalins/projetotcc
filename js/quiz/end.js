@@ -6,7 +6,7 @@ var endState = {
         //
         var txtPontos = game.add.text(game.world.centerX, 200, 'SEUS PONTOS: ' + pontos, { font: '18px emulogic', fill: '#fff' });
         txtPontos.anchor.set(.5);
-        var txtTempo = game.add.text(game.world.centerX, 300, 'SEU TEMPO: ' + ((tempo/60)/60).toFixed(2) +"s", { font: '18px emulogic', fill: '#fff' });
+        var txtTempo = game.add.text(game.world.centerX, 300, 'SEU TEMPO: ' + tempo +" min", { font: '18px emulogic', fill: '#fff' });
         txtTempo.anchor.set(.5);
         //
         var botao = game.add.button(game.world.centerX - 95, 400, 'botao', clickBotao, this, 2, 1, 0);

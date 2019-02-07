@@ -40,7 +40,7 @@ function postPartida() {
             "id": relatorio.id
         },
         "nivel": nivel,
-        "tempo": tempo + " seg"
+        "tempo": tempo + " min"
     })
         .then(function (response) {
             location.reload();
