@@ -122,15 +122,9 @@ function colisorMedio(player, letra) {
             erradas.push(letras);
         }
         //
-        player.x = 100;
-        player.y = 200;
-        //
-        txt.text = " ";
-        txtPalavra.text = " ";
-        //
         if (partidas != 10) {
             partidas++;
-            montandoCenarioMedio();
+            game.state.start('medio');
         } else {
             var jsonCorretas = JSON.stringify(corretas);
             localStorage.setItem("corretas", jsonCorretas);

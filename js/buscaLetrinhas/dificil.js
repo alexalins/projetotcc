@@ -98,12 +98,6 @@ var dificilState = {
         prevCamX = game.camera.x;
         txtTempo.text = "Tempo: " + ((tempo / 60) / 60).toFixed(2) + " min";
         txtPonto.text = "Ponto: " + pontos;
-    },
-
-    render: function () {
-        game.debug.body(player);
-        game.debug.body(group);
-
     }
 };
 
@@ -122,15 +116,9 @@ function colisorDificil(player, letra) {
             erradas.push(letras);
         }
         //
-        player.x = 100;
-        player.y = 200;
-        //
-        txt.text = " ";
-        txtPalavra.text = " ";
-        //
         if (partidas != 10) {
             partidas++;
-            montandoCenarioDificil();
+            game.state.start('dificil');
         } else {
             var jsonCorretas = JSON.stringify(corretas);
             localStorage.setItem("corretas", jsonCorretas);
