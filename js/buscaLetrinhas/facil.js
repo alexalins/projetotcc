@@ -98,17 +98,12 @@ var facilState = {
         prevCamX = game.camera.x;
         txtTempo.text = "Tempo: " + ((tempo / 60) / 60).toFixed(2) + " min";
         txtPonto.text = "Ponto: " + pontos;
-    },
-
-    render: function () {
-        game.debug.body(player);
-        game.debug.body(group);
-
     }
 };
 
 
 function colisor(player, letra) {
+    
     coletorLetras = coletorLetras + letra.data;
     txtPalavra.text = coletorLetras;
     letra.kill();

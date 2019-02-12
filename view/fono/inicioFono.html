@@ -1,12 +1,12 @@
 <nav style="background-color: #03a9f4">
-    <div class="nav-wrapper">
-        <a href="#/inicioFono" class="brand-logo">&nbsp;&nbsp;Game</a>
-        <ul id="nav-mobile" class="right hide-on-med-and-down">
-            <li><a href="#/pacientesFono"><b>Meus Pacientes</b></a></li>
-            <li><a href="#/dadosFono"><b>Dados</b></a></li>
-            <li><a href="#/login"><b>Sair</b></a></li>
-        </ul>
-    </div>
+	<div class="nav-wrapper">
+		<a href="#/inicioFono" class="brand-logo">&nbsp;&nbsp;Game</a>
+		<ul id="nav-mobile" class="right hide-on-med-and-down">
+			<li><a href="#/pacientesFono"><b>Meus Pacientes</b></a></li>
+			<li><a href="#/dadosFono"><b>Dados</b></a></li>
+			<li><a href="#/login"><b>Sair</b></a></li>
+		</ul>
+	</div>
 </nav>
 <div id="includedContent"></div>
 <div class="row">
@@ -14,13 +14,19 @@
 		<div class="card white darken-1">
 			<div class="card-content black-text">
 				<div align="center">
-					<span class="card-title" ><b>Seja bem vindo, Fono</b></span>
+					<span class="card-title"><b>Seja bem vindo, {{fono.nome}}</b></span>
 				</div>
-				<p>
-
-					Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut ut sem commodo, tincidunt sapien sit amet, interdum lacus. In hac habitasse platea dictumst. In hac habitasse platea dictumst. Suspendisse quis fermentum neque. Interdum et malesuada fames ac ante ipsum primis in faucibus. Duis rhoncus aliquam lectus, in mattis urna. Nam dui erat, suscipit et pretium ut, dictum vitae urna. Ut pellentesque sagittis nulla lobortis sollicitudin. Pellentesque diam lectus, dignissim et interdum lobortis, semper vitae odio. Nam tortor ante, malesuada vitae iaculis id, imperdiet sed libero.
-
-				Proin facilisis id nulla sit amet blandit. Ut malesuada in purus eu lacinia. Integer congue justo ac sapien placerat, at tempor ligula ultrices. Nulla eget augue tempor, mollis sem eu, pellentesque lectus. Nullam quis dignissim erat. Morbi elementum non lectus ac mollis. Phasellus porttitor dolor finibus elit malesuada accumsan eget eu est. Nunc pharetra sodales orci, in dictum ipsum faucibus fermentum. Phasellus id pellentesque velit, quis venenatis tellus. In hac habitasse platea dictumst. Cras hendrerit placerat lectus, eget dignissim orci molestie non. Morbi elementum malesuada mauris, in faucibus metus consequat in. </p>
+				<div align="center">
+					<p>
+						SysDislalia é sistema web com jogos em 2D, para auxiliar o
+						fonoaudiólogo no tratamento de crianças com dislalia.
+					</p>
+					<p>
+						O módulo do fonoaudiólogo, possibilita ao profissional fonoaudiólogo gerenciar sua conta e a dos
+						seus pacientes, gerenciar as palavras dos seus pacientes por nível e gerar relatório com
+						erros e acertos dos jogos.
+					</p>
+				</div>
 			</div>
 		</div>
 	</div>
@@ -30,7 +36,18 @@
 				<div align="center">
 					<span class="card-title"><b>Informações sobre seus pacientes</b></span>
 				</div>
-				<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut ut sem commodo, tincidunt sapien sit amet, interdum lacus. In hac habitasse platea dictumst. In hac habitasse platea dictumst. Suspendisse quis fermentum neque. Interdum et malesuada fames ac ante ipsum primis in faucibus. Duis rhoncus aliquam lectus, in mattis urna. Nam dui erat, suscipit et pretium ut, dictum vitae urna. Ut pellentesque sagittis nulla lobortis sollicitudin. Pellentesque diam lectus, dignissim et interdum lobortis, semper vitae odio. Nam tortor ante, malesuada vitae iaculis id, imperdiet sed libero.</p>
+				<p>
+					Vejas as informações dos seus pacientes, cadastre palvras e acompanhe seu desempenho no jogos.
+				</p>
+				<br />
+				<div align="center">
+					<i class="material-icons circle red">filter_9_plus</i>
+					<span class="title">NÚMERO DE PACIENTES: {{fono.pacientes.length}}</span>
+				</div>
+				<br />
+				<div align="center">
+					<a class="waves-effect waves-light btn-small" href="#/pacientesFono">Ver pacientes </a>
+				</div>
 			</div>
 		</div>
 	</div>
@@ -38,9 +55,18 @@
 		<div class="card white darken-1">
 			<div class="card-content black-text">
 				<div align="center">
-					<span class="card-title"><b>Resultados dos jogos</b></span>
+					<span class="card-title"><b>Jogos disponiveís para os pacientes</b></span>
 				</div>
-				<p>Proin facilisis id nulla sit amet blandit. Ut malesuada in purus eu lacinia. Integer congue justo ac sapien placerat, at tempor ligula ultrices. Nulla eget augue tempor, mollis sem eu, pellentesque lectus. Nullam quis dignissim erat. Morbi elementum non lectus ac mollis. Phasellus porttitor dolor finibus elit malesuada accumsan eget eu est. Nunc pharetra sodales orci, in dictum ipsum faucibus fermentum. Phasellus id pellentesque velit, quis venenatis tellus. In hac habitasse platea dictumst. Cras hendrerit placerat lectus, eget dignissim orci molestie non. Morbi elementum malesuada mauris, in faucibus metus consequat in.</p>
+				<br />
+				<div align="center">
+					<i class="material-icons circle red">games</i>
+					<span class="title">NÚMERO DE JOGOS: 2</span>
+				</div>
+				<div align="center">
+					<h6>Quiz Palavras</h6>
+					<h6>Busca Letrinhas</h6>
+					<h6>MAIS EM BREVE</h6>
+				</div>
 			</div>
 		</div>
 	</div>
