@@ -1,0 +1,64 @@
+<nav style="background-color: #03a9f4">
+    <div class="nav-wrapper">
+        <a href="#/inicioFono" class="brand-logo">&nbsp;&nbsp;Game</a>
+        <ul id="nav-mobile" class="right hide-on-med-and-down">
+            <li><a href="#/pacientesFono"><b>Meus Pacientes</b></a></li>
+            <li><a href="#/dadosFono"><b>Dados</b></a></li>
+            <li><a href="#/login"><b>Sair</b></a></li>
+        </ul>
+    </div>
+</nav>
+
+<div style="margin-left: 15%;">
+	<div class="row">
+		<div class="col s10">
+			<br />
+			<div align="right">
+				<a class="waves-effect waves-light btn-small" href="#/atualizarPacienteFono/{{paciente.id}}"><i class="material-icons right">edit</i>Atualizar
+					dados</a>
+				<a class="waves-effect waves-light btn-small" ng-click="removerPaciente()"><i class="material-icons right">delete</i>Excluir
+					conta</a>
+			</div>
+			<br />
+			<div class="card white darken-1">
+				<ul class="collection">
+					<li class="collection-item avatar">
+						<i class="material-icons circle">face</i>
+						<span class="title">NOME</span>
+						<p>{{paciente.nome}}</p>
+					</li>
+					<li class="collection-item avatar">
+						<i class="material-icons circle">assignment_ind</i>
+						<span class="title">NOME DO RESPONSÁVEL</span>
+						<p>{{paciente.nomeResponsavel}}</p>
+					</li>
+					<li class="collection-item avatar">
+						<i class="material-icons circle green">local_phone</i>
+						<span class="title">TELEFONE</span>
+						<p>{{paciente.telefone}}</p>
+					</li>
+					<li class="collection-item avatar">
+						<i class="material-icons circle red">web</i>
+						<span class="title">LOGIN</span>
+						<p>{{paciente.login}}</p>
+					</li>
+					<li class="collection-item avatar">
+						<i class="material-icons circle red">location_city</i>
+						<span class="title">CIDADE</span>
+						<p>{{paciente.endereco.cidade}}</p>
+					</li>
+					<li class="collection-item avatar">
+						<i class="material-icons circle red">directions</i>
+						<span class="title">BAIRRO</span>
+						<p>{{paciente.endereco.bairro}}</p>
+					</li>
+					<li class="collection-item avatar">
+						<i class="material-icons circle red">location_on</i>
+						<span class="title">RUA</span>
+						<p>{{paciente.endereco.rua}}</p>
+					</li>
+				</ul>
+			</div>
+		</div>
+	</div>
+</div>

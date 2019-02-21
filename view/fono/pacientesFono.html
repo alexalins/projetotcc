@@ -27,9 +27,7 @@
 						<th>NOME DO RESPONSÁVEL</th>
 						<th>IDADE</th>
 						<th>TELEFONE</th>
-						<th>RUA</th>
-						<th>BAIRRO</th>
-						<th>CIDADE</th>
+						<th>VER DADOS</th>
 						<th>VER PARTIDAS</th>
 						<th>VER PALAVRAS</th>
 					</tr>
@@ -41,9 +39,7 @@
 						<td>{{paciente.nomeResponsavel | uppercase}}</td>
 						<td>{{paciente.idade | uppercase}}</td>
 						<td>{{paciente.telefone | uppercase}}</td>
-						<td>{{paciente.endereco.rua | uppercase}}</td>
-						<td>{{paciente.endereco.bairro | uppercase}}</td>
-						<td>{{paciente.endereco.cidade | uppercase}}</td>
+						<td><a class="waves-effect waves-light btn" href="#/dadosPacienteFono/{{paciente.id}}">Ver dados</a></td>
 						<td><a class="waves-effect waves-light btn" href="#/pacientePartida/{{paciente.id}}">Ver partidas</a></td>
 						<td><a class="waves-effect waves-light btn" href="#/palavraPartida/{{paciente.id}}">Ver palavras</a></td>
 					</tr>

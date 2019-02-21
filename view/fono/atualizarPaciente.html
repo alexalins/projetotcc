@@ -1,0 +1,65 @@
+<div style="margin-left: 25%;">
+    <div class="row">
+        <div class="col s8">
+            <div class="card" align="center">
+                <div class="card-content">
+                    <div class="row">
+                        <form class="col s12">
+                            <div class="row">
+                                <div class="input-field col s12">
+                                    <input id="nome" type="text" class="validate" name="nome" ng-model="paciente.nome" placeholder="Nome">
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="input-field col s12">
+                                    <input id="nomeResponsavel" type="text" class="validate"
+                                        ng-model="paciente.nomeResponsavel" placeholder="Nome do responsavel">
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="input-field col s12">
+                                    <input id="idade" type="number" class="validate"
+                                        ng-model="paciente.idade" placeholder="Idade">
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="input-field col s12">
+                                    <input id="login" type="text" class="validate" ng-model="paciente.login" placeholder="Login">
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="input-field col s12">
+                                    <input id="senha" type="password" class="validate" ng-model="paciente.senha" placeholder="Senha">
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="input-field col s12">
+                                    <input id="rua" type="text" class="validate" ng-model="paciente.endereco.rua" placeholder="Rua">
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="input-field col s12">
+                                    <input id="bairro" type="text" class="validate" ng-model="paciente.endereco.bairro" placeholder="Bairro">
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="input-field col s12">
+                                    <input id="cidade" type="text" class="validate" ng-model="paciente.endereco.cidade" placeholder="Cidade">
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="input-field col s12">
+                                    <input id="telefone" type="text" class="validate" ng-model="paciente.telefone" onkeyup="mascara( this, mtel );" maxlength="15" placeholder="Telefone">
+                                </div>
+                            </div>
+                            <br />
+                        </form>
+                        <div align="center">
+                            <a class="btn waves-effect waves-light" ng-click="atualizarPaciente(paciente)">Salvar</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

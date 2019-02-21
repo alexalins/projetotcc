@@ -47,6 +47,11 @@ app.config(function($routeProvider) {
         controller: 'pacienteCtrl'
     })
 
+    .when('/dadosPacienteFono/:id', {
+        templateUrl: 'view/fono/dadosPaciente.html',
+        controller: 'pacienteFonoCtrl'
+    })
+
     .when('/partidasPaciente', {
         templateUrl: 'view/paciente/partidasPaciente.html',
         controller: 'pacienteCtrl'
@@ -55,6 +60,11 @@ app.config(function($routeProvider) {
     .when('/atualizarPaciente', {
         templateUrl: 'view/paciente/atualizarPaciente.html',
         controller: 'pacienteCtrl'
+    })
+
+    .when('/atualizarPacienteFono/:id', {
+        templateUrl: 'view/fono/atualizarPaciente.html',
+        controller: 'pacienteFonoCtrl'
     })
 
     .when('/relatorioPartida/:id', {
