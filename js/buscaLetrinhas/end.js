@@ -12,19 +12,22 @@ var endState = {
         var botao = game.add.button(400 - 95, 400, 'botao', clickBotao, this, 2, 1, 0);
         var txtBotao= game.add.text(400, 440, 'INICIO', { font: '18px emulogic', fill: '#00000' });
         txtBotao.anchor.set(.7);
+        postRelatorio();
+        //
+        var erradas = JSON.parse(localStorage.getItem("erradas"));
+        for (let i = 0; i < erradas.length; i++) {
+            postErros(erradas[i]);
+        }
+        //
+        var corretas = JSON.parse(localStorage.getItem("corretas"));
+        for (let i = 0; i < corretas.length; i++) {
+            postAcertos(corretas[i]);
+        }
+        //
+        postPartida();
     }
 };
 
-function clickBotao(){
-    var erradas = JSON.parse(localStorage.getItem("erradas"));
-    for (let i = 0; i < erradas.length; i++) {
-        postErros(erradas[i]);
-    }
-    //
-    var corretas = JSON.parse(localStorage.getItem("corretas"));
-    for (let i = 0; i < corretas.length; i++) {
-        postAcertos(corretas[i]);
-    }
-    //
-    postPartida();
+function clickBotao() {
+    location.reload();
 }

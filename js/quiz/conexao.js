@@ -43,7 +43,6 @@ function postPartida() {
         "tempo": tempo + " min"
     })
         .then(function (response) {
-            location.reload();
             console.log(response);
         })
         .catch(function (error) {
