@@ -7,7 +7,7 @@ app.service("loginService", ["$http", function($http){
         }
         var req = {
             method: 'POST',
-            url:'http://game-tcc.herokuapp.com/'+login.usuario+'/login',
+            url:'https://game-tcc.herokuapp.com/'+login.usuario+'/login',
             data: valorData,
             headers: {
                 'Content-Type' : 'application/json'
