@@ -15,7 +15,7 @@ app.service("cadastroService", ["$http", function($http){
 
         var req = {
             method: 'POST',
-            url:'http://game-tcc.herokuapp.com/fono',
+            url:'https://game-tcc.herokuapp.com/fono',
             data: valorData,
             headers: {
                 'Content-Type' : 'application/json'
@@ -47,7 +47,7 @@ app.service("cadastroService", ["$http", function($http){
 
         var req = {
             method: 'POST',
-            url:'http://game-tcc.herokuapp.com/paciente',
+            url:'https://game-tcc.herokuapp.com/paciente',
             data: valorData,
             headers: {
                 'Content-Type' : 'application/json'

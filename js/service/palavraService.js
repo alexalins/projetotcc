@@ -3,7 +3,7 @@ app.service("palavraService", ["$http", function($http){
     this.getPartidaPaciente = function(id){
         var req = {
             method: 'GET',
-            url:'http://game-tcc.herokuapp.com/palavra/paciente/' + id,
+            url:'https://game-tcc.herokuapp.com/palavra/paciente/' + id,
             headers: {
                 'Content-Type' : 'application/json'
             }
@@ -16,7 +16,7 @@ app.service("palavraService", ["$http", function($http){
 
         var req = {
             method: 'POST',
-            url:'http://game-tcc.herokuapp.com/palavra/',
+            url:'https://game-tcc.herokuapp.com/palavra/',
             data: palavra,
             headers: {
                 'Content-Type' : 'application/json'
@@ -30,7 +30,7 @@ app.service("palavraService", ["$http", function($http){
 
         var req = {
             method: 'DELETE',
-            url:'http://game-tcc.herokuapp.com/palavra/' + id,
+            url:'https://game-tcc.herokuapp.com/palavra/' + id,
             headers: {
                 'Content-Type' : 'application/json'
             }

@@ -3,7 +3,7 @@ app.service("pacienteService", ["$http", function($http){
     this.getPaciente = function(id){
         var req = {
             method: 'GET',
-            url:'http://game-tcc.herokuapp.com/paciente/' + id,
+            url:'https://game-tcc.herokuapp.com/paciente/' + id,
             headers: {
                 'Content-Type' : 'application/json'
             }
@@ -14,7 +14,7 @@ app.service("pacienteService", ["$http", function($http){
     this.getFono = function(id){
         var req = {
             method: 'GET',
-            url:'http://game-tcc.herokuapp.com/fono/paciente/' + id,
+            url:'https://game-tcc.herokuapp.com/fono/paciente/' + id,
             headers: {
                 'Content-Type' : 'application/json'
             }
@@ -45,7 +45,7 @@ app.service("pacienteService", ["$http", function($http){
         //
         var req = {
             method: 'PUT',
-            url:'http://game-tcc.herokuapp.com/paciente/',
+            url:'https://game-tcc.herokuapp.com/paciente/',
             data: valorData,
             headers: {
                 'Content-Type' : 'application/json'
@@ -57,7 +57,7 @@ app.service("pacienteService", ["$http", function($http){
     this.removerPaciente = function(id){
         var req = {
             method: 'DELETE',
-            url:'http://game-tcc.herokuapp.com/paciente/' + id,
+            url:'https://game-tcc.herokuapp.com/paciente/' + id,
             headers: {
                 'Content-Type' : 'application/json'
             }
