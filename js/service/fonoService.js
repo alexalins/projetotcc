@@ -3,7 +3,7 @@ app.service("fonoService", ["$http", function($http){
     this.getFono = function(id){
         var req = {
             method: 'GET',
-            url:'http://game-tcc.herokuapp.com/fono/' + id,
+            url:'https://game-tcc.herokuapp.com/fono/' + id,
             headers: {
                 'Content-Type' : 'application/json'
             }
@@ -27,7 +27,7 @@ app.service("fonoService", ["$http", function($http){
         }
         var req = {
             method: 'PUT',
-            url:'http://game-tcc.herokuapp.com/fono/',
+            url:'https://game-tcc.herokuapp.com/fono/',
             data: fono,
             headers: {
                 'Content-Type' : 'application/json'
@@ -39,7 +39,7 @@ app.service("fonoService", ["$http", function($http){
     this.removerFono = function(id){
         var req = {
             method: 'DELETE',
-            url:'http://game-tcc.herokuapp.com/fono/' + id,
+            url:'https://game-tcc.herokuapp.com/fono/' + id,
             headers: {
                 'Content-Type' : 'application/json'
             }
