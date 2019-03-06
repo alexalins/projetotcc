@@ -1,6 +1,6 @@
 var endState = {
     create: function () {
-        
+        postRelatorio();
         var pontos = localStorage.getItem("pontos");
         var tempo = localStorage.getItem("tempo");
         //
@@ -12,7 +12,6 @@ var endState = {
         var botao = game.add.button(game.world.centerX - 95, 400, 'botao', clickBotao, this, 2, 1, 0);
         var txtBotao = game.add.text(game.world.centerX, 440, 'INICIO', { font: '18px emulogic', fill: '#00000' });
         txtBotao.anchor.set(.7);
-        postRelatorio();
         //
         var erradas = JSON.parse(localStorage.getItem("erradas"));
         for (let i = 0; i < erradas.length; i++) {
