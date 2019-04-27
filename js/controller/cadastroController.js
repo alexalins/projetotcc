@@ -6,22 +6,22 @@ app.controller('cadastroCtrl', function ($scope, $location, cadastroService) {
     $scope.cadastroFono = function (fono) {
         cadastroService.cadastroFono(fono)
             .then(function (success) {
-                alert("Cadatros realizado com sucesso!");
+                swal("Salvo!", "Cadastro feito com sucesso!", "success");
                 $location.path('/login');
             })
             .catch(function (error) {
-                alert("Não foi possível realizar o cadastro");
+                swal("Erro!", "Não foi possivel cadastrar o fonoaudiólogo!", "error");
             })
     }
     //
     $scope.cadastroPaciente = function(paciente, id){
         cadastroService .cadastroPaciente(paciente, $scope.fono.id)
         .then(function (success){
-            alert("Cadatros realizado com sucesso!");
+            swal("Salvo!", "Cadastro feito com sucesso!", "success");
             $location.path('/pacientesFono');
         })
         .catch(function(error){
-            alert("Não foi possível realizar o cadastro");
+            swal("Erro!", "Não foi possivel cadastrar o paciente!", "error");
         })
     }
 })
