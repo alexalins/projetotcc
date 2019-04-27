@@ -15,7 +15,7 @@ app.controller('loginCtrl', function($scope, $location, loginService) {
             }
         })
         .catch(function(error) {
-            alert("Não foi possível realizar o login.");
+            swal("Erro!", "Não foi possível realizar o login!", "error");
         })
     }
 })
