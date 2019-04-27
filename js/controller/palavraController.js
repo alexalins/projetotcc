@@ -7,8 +7,6 @@ app.controller('palavraCtrl', function ($scope, $routeParams, $location, palavra
         .then(function (success) {
             $scope.palavras = success.data;
         })
-        .catch(function (error) {
-        })
     //
     $scope.palavra = {}
     $scope.adicionarPalavras = function () {
@@ -28,25 +26,41 @@ app.controller('palavraCtrl', function ($scope, $routeParams, $location, palavra
             console.log(palavra);
             palavraService.adicionarPalavra(palavra)
                 .then(function (success) {
+                    swal("Salvo!", "Cadastro feito com sucesso!", "success");
                     $location.path('/palavraPartida/' + $scope.idPaciente);
                 })
                 .catch(function (error) {
+                    swal("Erro!", "Erro em cadastrar palavra!", "error");
                 })
         }
     }
     //
     $scope.removerPalavra = function (id) {
-        palavraService.removerPalavra(id)
-        .then(function (success) {
-            location.reload();
+        swal({
+            title: "Deseja remover a palavra?",
+            icon: "warning",
+            buttons: {
+                confirm: "Ok",
+                cancel: "Cancelar"
+            },
+            dangerMode: true,
         })
-        .catch(function (error) {
-        })
+            .then((willDelete) => {
+                if (willDelete) {
+                    palavraService.removerPalavra(id)
+                        .then(function (success) {
+                            swal("Removida!", "Palavra removida!", "success");
+                            location.reload();
+                        })
+                        .catch(function (error) {
+                            swal("Erro!", "Não foi possível remover a palavra!", "error");
+                        })
+                }
+            });
     }
     //
     var i = 1;
     $scope.exibirOpcao = function () {
-
         $("#opcao" + i).css("display", "block");
         i++;
     }

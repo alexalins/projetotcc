@@ -10,7 +10,7 @@ app.controller('fonoCtrl', function ($scope, $location, fonoService) {
             localStorage.setItem("dados", dados);
         })
         .catch(function (error) {
-            alert("Não foi possível listar os dados");
+            swal("Erro!", "Não foi possível listar os dados!", "error");
         })
     //
     $scope.atualizarFono = function (fono) {
@@ -22,27 +22,36 @@ app.controller('fonoCtrl', function ($scope, $location, fonoService) {
                 $location.path('/dadosFono');
             })
             .catch(function (error) {
-                alert("Não foi possível atualizar os dados");
+                swal("Erro!", "Não foi possível atualizar os dados!", "error");
             })
 
     }
     //
     $scope.removerFono = function () {
-        var resposta = confirm("Deseja remover sua conta?");
-        if (resposta == true) {
-            fonoService.removerFono($scope.fono.id)
-                .then(function (success) {
-                    $scope.fono = success.data;
-                    var dados = angular.toJson(success.data);
-                    localStorage.setItem("dados", dados);
-                    //
-                    $location.path('/login');
-                })
-                .catch(function (error) {
-                    alert("Não foi possível atualizar os dados");
-                })
-        }
+        swal({
+            title: "Deseja remover sua conta?",
+            icon: "warning",
+            buttons: { 
+                confirm: "Ok",
+                cancel: "Cancelar" 
+            },
+            dangerMode: true,
+        })
+            .then((willDelete) => {
+                if (willDelete) {
+                    fonoService.removerFono($scope.fono.id)
+                        .then(function (success) {
+                            $scope.fono = success.data;
+                            var dados = angular.toJson(success.data);
+                            localStorage.setItem("dados", dados);
+                            //
+                            swal("Removida!", "Conta removida!", "success");
+                            $location.path('/login');
+                        })
+                        .catch(function (error) {
+                            swal("Erro!", "Não foi possível atualizar os dados!", "error");
+                        })
+                }
+            });
     }
-
-
 })

@@ -8,11 +8,10 @@ app.controller('partidaCtrl', function ($scope, $routeParams, partidaService) {
 			relatorio($scope.partida.relatorio)
 		})
 		.catch(function (error) {
-			alert("Não foi possível listar os dados");
+			swal("Erro!", "Não foi possível listar os dados da partida!", "error");
 		})
 	//
 	//RELATORIO
-
 	let relatorio = function (dados) {
 		var ctx = document.getElementById("myChart").getContext('2d');
 		var myChart = new Chart(ctx, {

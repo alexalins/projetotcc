@@ -6,7 +6,7 @@ app.controller('partidasFonoCtrl', function ($scope, $location, $routeParams, fo
             console.log($scope.paciente);
         })
         .catch(function (error) {
-            alert("Não foi possível listar os dados");
+            swal("Erro!", "Não foi possível listar os dados da partida!", "error");
         })
 
 })

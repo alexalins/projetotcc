@@ -10,7 +10,7 @@ app.controller('cadastroCtrl', function ($scope, $location, cadastroService) {
                 $location.path('/login');
             })
             .catch(function (error) {
-                swal("Erro!", "Não foi possivel cadastrar o fonoaudiólogo!", "error");
+                swal("Erro!", "Não foi possível cadastrar o fonoaudiólogo!", "error");
             })
     }
     //
@@ -21,7 +21,7 @@ app.controller('cadastroCtrl', function ($scope, $location, cadastroService) {
             $location.path('/pacientesFono');
         })
         .catch(function(error){
-            swal("Erro!", "Não foi possivel cadastrar o paciente!", "error");
+            swal("Erro!", "Não foi possível cadastrar o paciente!", "error");
         })
     }
 })

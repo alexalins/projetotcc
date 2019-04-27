@@ -10,7 +10,8 @@ app.controller('pacienteCtrl', function ($scope, $location, pacienteService) {
             localStorage.setItem("dados", dados);
         })
         .catch(function (error) {
-            alert("Não foi possível listar os dados");
+            swal("Erro!", "Não foi possível listar os dados!", "error");
+            
         })
 
     pacienteService.getFono($scope.paciente.id)
@@ -18,7 +19,7 @@ app.controller('pacienteCtrl', function ($scope, $location, pacienteService) {
             $scope.fono = success.data;
         })
         .catch(function (error) {
-            alert("Não foi possível listar os dados");
+            swal("Erro!", "Não foi possível listar os dados!", "error");
         })
     //
     $scope.atualizarPaciente = function (paciente) {
@@ -27,27 +28,39 @@ app.controller('pacienteCtrl', function ($scope, $location, pacienteService) {
                 $scope.paciente = success.data;
                 var dados = angular.toJson(success.data);
                 localStorage.setItem("dados", dados);
+                swal("Atualizado!", "Paciente atualizado com sucesso!", "success");
                 $location.path('/dadosPaciente');
             })
             .catch(function (error) {
-                alert("Não foi possível atualizar os dados");
+                swal("Erro!", "Não foi possível atualizar os dados!", "error");
             })
     }
     //
     $scope.removerPaciente = function () {
-        var resposta = confirm("Deseja remover sua conta?");
-        if (resposta == true) {
-            pacienteService.removerPaciente($scope.paciente.id)
-                .then(function (success) {
-                    $scope.paciente = success.data;
-                    var dados = angular.toJson(success.data);
-                    localStorage.setItem("dados", dados);
-                    //
-                    $location.path('/login');
-                })
-                .catch(function (error) {
-                    alert("Não foi possível atualizar os dados");
-                })
-        }
+        swal({
+            title: "Deseja remover sua conta?",
+            icon: "warning",
+            buttons: {
+                confirm: "Ok",
+                cancel: "Cancelar"
+            },
+            dangerMode: true,
+        })
+            .then((willDelete) => {
+                if (willDelete) {
+                    pacienteService.removerPaciente($scope.paciente.id)
+                        .then(function (success) {
+                            $scope.paciente = success.data;
+                            var dados = angular.toJson(success.data);
+                            localStorage.setItem("dados", dados);
+                            //
+                            swal("Removida!", "Conta removida!", "success");
+                            $location.path('/login');
+                        })
+                        .catch(function (error) {
+                            swal("Erro!", "Não foi possível remover  a conta!", "error");
+                        })
+                }
+            });
     }
 })
