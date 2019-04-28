@@ -14,13 +14,17 @@
 	<div class="col s12" ng-repeat="jogo in jogos">
 		<div class="card white darken-1">
 			<div class="card-content black-text">
-				<h4>{{jogo.nome}}</h4>
-				<p>{{jogo.descricao}}</p>
-			</div>
-			<div class="card-action" align="right">
-				<a class="waves-effect waves-light btn-small" href="#/jogos/{{jogo.id}}">Jogar!<i
-						class="material-icons right">games</i></a>
+				<div class="row">
+					<div class="col s3">
+						<img ng-src="{{jogo.foto}}" style="width: 90%;" />
+					</div>
+					<div class="col s9">
+						<h4>{{jogo.nome}}</h4>
+						<p>{{jogo.descricao}}</p>
+						<a class="waves-effect waves-light btn-small" href="#/jogos/{{jogo.id}}" style="margin-top: 3%">Jogar!<i
+							class="material-icons right">games</i></a>
+					</div>
+				</div>
 			</div>
 		</div>
 	</div>
-</div>
