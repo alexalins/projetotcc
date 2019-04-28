@@ -6,7 +6,6 @@ app.controller('jogoCtrl', function($scope, $routeParams, jogoService) {
         
     })
     .catch(function(error){
-        swal("Erro!", "Não foi possível listar os jogos!", "error");
     })
     //
     jogoService.getJogo($routeParams.id)
@@ -15,6 +14,5 @@ app.controller('jogoCtrl', function($scope, $routeParams, jogoService) {
         console.log($scope.jogo);
     })
     .catch(function(error){
-        swal("Erro!", "Não foi possível listar o jogo!", "error");
     })
 })

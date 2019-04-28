@@ -90,10 +90,7 @@ function gerandoOpcoesDificil() {
     var palavras = JSON.parse(localStorage.getItem("palavras"));
     //
     if (palavras == null  || palavras.length <= 5) {
-        var alerta = confirm("Você não tem palavras cadastradas suficientes para jogar! Por favor, peça para seu fono cadastras suas palavras.");
-        if (alerta == true) {
-            location.reload();
-        }
+        palavras = ["atlantico", "bloco", "teclado", "cachorro", "palavra", "musica","dislalia"];
     }
     var index = Math.floor(Math.random() * palavras.length);
     var palavra = palavras[index];
