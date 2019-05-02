@@ -7,7 +7,7 @@ app.controller('cadastroCtrl', function ($scope, $location, cadastroService) {
         cadastroService.cadastroFono(fono)
             .then(function (success) {
                 swal("Salvo!", "Cadastro feito com sucesso!", "success");
-                $location.path('/login');
+                $location.path('/inicioFono');
             })
             .catch(function (error) {
                 swal("Erro!", "Não foi possível cadastrar o fonoaudiólogo!", "error");
