@@ -58,12 +58,12 @@ function verificaRespMedio(botao) {
             this.montarCenarioMedio();
             pontos += 10;
             //
-            corretas.push(botao.data);
+            corretas.push(correta);
         } else {
             this.gerandoOpcoesMedio();
             this.montarCenarioMedio();
             //
-            erradas.push(botao.data);
+            erradas.push(correta);
         }
         //
         jogadas++;

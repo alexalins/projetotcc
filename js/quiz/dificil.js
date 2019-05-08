@@ -64,12 +64,12 @@ function verificaRespDificil(botao) {
             this.montarCenarioDificil();
             pontos += 10;
             //
-            corretas.push(botao.data);
+            corretas.push(correta);
         } else {
             this.gerandoOpcoesDificil();
             this.montarCenarioDificil();
             //
-            erradas.push(botao.data);
+            erradas.push(correta);
         }
         //
         jogadas++;
