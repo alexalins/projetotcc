@@ -55,12 +55,12 @@ function verificaRespFacil(botao) {
             this.montarCenarioFacil();
             pontos += 10;
             //
-            corretas.push(botao.data);
+            corretas.push(correta);
         } else {
             this.gerandoOpcoesFacil();
             this.montarCenarioFacil();
             //
-            erradas.push(botao.data);
+            erradas.push(correta);
         }
         //
         jogadas++;
