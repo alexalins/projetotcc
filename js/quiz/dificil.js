@@ -82,6 +82,7 @@ function verificaRespDificil(botao) {
         var jsonErradas = JSON.stringify(erradas);
         localStorage.setItem("erradas", jsonErradas);
         //
+        //postRelatorio();
         game.state.start('end');
     }
 }

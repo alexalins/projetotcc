@@ -4,6 +4,7 @@ var bootState = {
 	},
 	
 	create: function(){
+		postRelatorio();
 		game.state.start('load');
 	}
 };

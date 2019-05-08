@@ -1,6 +1,6 @@
 var endState = {
     create: function () {
-        postRelatorio();
+        //postRelatorio();
         var pontos = localStorage.getItem("pontos");
         var tempo = localStorage.getItem("tempo");
         //
