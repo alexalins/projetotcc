@@ -9,6 +9,9 @@ var pontos = 0;
 var tempo = 0;
 var txtPonto;
 var txtTempo;
+var segundos = 0;
+var minutos = 0;
+var control = 0;
 //
 var dificilState = {
     create: function () {
@@ -18,16 +21,42 @@ var dificilState = {
         txtPonto.anchor.set(.65);
         txtTempo = game.add.text(600, 50, "Tempo: 000 s", { font: '18px emulogic', fill: '#fff' });
         txtTempo.anchor.set(.65);
+        iniciarTemporizador();
         montarCenarioDificil();
     },
     update: function () {
         txtTempo.text = "";
         txtPonto.text = "";
         tempo++;
-        txtTempo.text = "Tempo: " + ((tempo / 60) / 60).toFixed(2) + " min";
+        txtTempo.text = "Tempo: " + minutos + ":" + segundos;
         txtPonto.text = "Ponto: " + pontos;
     }
 };
+
+function paraTemporizador(){
+	clearInterval(control);
+}
+
+function iniciarTemporizador() {
+	control = setInterval(cronometro,1000);
+}
+
+function cronometro () {
+	segundos ++;
+	if (segundos < 10) { segundos = "0"+segundos }
+	if (segundos == 59) {
+		segundos = -1;
+	}
+	if (segundos == 0) {
+		minutos++;
+		if (minutos < 10) { minutos = "0"+minutos }
+	}
+}
+
+function zerarTemporizador(){
+	segundos = 0;
+	minutos = 0;
+}
 
 function montarCenarioDificil() {
     var opcoes = gerandoOpcoesDificil();
@@ -75,7 +104,7 @@ function verificaRespDificil(botao) {
         jogadas++;
     } else {
         localStorage.setItem("pontos", pontos);
-        localStorage.setItem("tempo", ((tempo / 60) / 60).toFixed(2));
+        localStorage.setItem("tempo", minutos + ":" + segundos);
         //
         var jsonCorretas = JSON.stringify(corretas);
         localStorage.setItem("corretas", jsonCorretas);
@@ -83,6 +112,7 @@ function verificaRespDificil(botao) {
         localStorage.setItem("erradas", jsonErradas);
         //
         //postRelatorio();
+        zerarTemporizador();
         game.state.start('end');
     }
 }

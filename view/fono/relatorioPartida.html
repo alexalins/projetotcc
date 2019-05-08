@@ -23,7 +23,9 @@
 				<tbody>
 					<tr>
 						<td>{{partida.jogo.nome | uppercase}}</td>
-						<td>{{partida.nivel | uppercase}}</td>
+						<td ng-if="partida.nivel == 'facil'">FÁCIL</td>
+						<td ng-if="partida.nivel == 'medio'">MÉDIO</td>
+						<td ng-if="partida.nivel == 'dificil'">DIFICÍL</td>
 						<td>{{partida.tempo | uppercase}}</td>
 					</tr>
 				</tbody>

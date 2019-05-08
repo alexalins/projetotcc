@@ -15,6 +15,9 @@ var pontos = 0;
 var tempo = 0;
 var txtPonto;
 var txtTempo;
+var segundos = 0;
+var minutos = 0;
+var control = 0;
 //
 Baddies = function (game) {
 
@@ -60,6 +63,7 @@ var dificilState = {
             group.add(new Baddies(game));
         }
         //
+        iniciarTemporizador();
         montandoCenarioDificil();
         //
         player = game.add.sprite(100, 200, 'nave');
@@ -96,11 +100,35 @@ var dificilState = {
         }
         //
         prevCamX = game.camera.x;
-        txtTempo.text = "Tempo: " + ((tempo / 60) / 60).toFixed(2) + " min";
-        txtPonto.text = "Ponto: " + pontos;
+        txtTempo.text = "Tempo: " + minutos + ":" + segundos;
+        txtPonto.text = "Pontos: " + pontos;
     }
 };
 
+function paraTemporizador(){
+	clearInterval(control);
+}
+
+function iniciarTemporizador() {
+	control = setInterval(cronometro,1000);
+}
+
+function cronometro () {
+	segundos ++;
+	if (segundos < 10) { segundos = "0"+segundos }
+	if (segundos == 59) {
+		segundos = -1;
+	}
+	if (segundos == 0) {
+		minutos++;
+		if (minutos < 10) { minutos = "0"+minutos }
+	}
+}
+
+function zerarTemporizador(){
+	segundos = 0;
+	minutos = 0;
+}
 
 function colisorDificil(player, letra) {
     coletorLetras = coletorLetras + letra.data;
@@ -126,8 +154,9 @@ function colisorDificil(player, letra) {
             localStorage.setItem("erradas", jsonErradas);
             //
             localStorage.setItem("pontos", pontos);
-            localStorage.setItem("tempo", ((tempo / 60) / 60).toFixed(2));
+            localStorage.setItem("tempo", minutos + ":" + segundos);
             //
+            zerarTemporizador();
             game.state.start('end');
         }
     }
